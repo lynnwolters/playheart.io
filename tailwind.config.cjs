@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     "./src/index.html",
+    "./src/goals.html",
     "./src/*.js",
   ],
   theme: {
@@ -38,6 +39,7 @@ module.exports = {
         '24': '24',
       },
       fontSize: {
+        xs: '0.75em',
         xl: '8.375em',
       },
       transitionDuration: {

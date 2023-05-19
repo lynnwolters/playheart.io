@@ -1,4 +1,4 @@
-.ll-marquee span {
+.ll-marquee > span {
     display: inline-block;
     animation: marqueeAnimation linear 14s infinite;
 }

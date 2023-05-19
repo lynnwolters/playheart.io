@@ -3,14 +3,25 @@ const cursorOutside = document.querySelector('.js-cursor-outside')
 const heart = document.querySelector('.js-heart')
 const heartRects = document.querySelectorAll('.js-heart-rect')
 const cursorInside = document.querySelector('.js-cursor-inside')
-const marquee = document.querySelector('.js-marquee-wrapper')
+const marqueeWrapper = document.querySelector('.js-marquee-wrapper')
 const chapterDescription = document.querySelector('.js-chapter-wrapper')
+const marqueeTitleEls = document.querySelectorAll('.js-marquee-title-el')
+const heartRectToneOfVoice = document.querySelector('.js-heart-rect-tone-of-voice')
+const heartRectBrandStory = document.querySelector('.js-heart-rect-brand-story')
+const heartRectVisualIdentity = document.querySelector('.js-heart-rect-visual-identity')
+const heartRectCompetitors = document.querySelector('.js-heart-rect-competitors')
+const heartRectBrandConcept = document.querySelector('.js-heart-rect-brand-concept')
+const heartRectInspiration = document.querySelector('.js-heart-rect-inspiration')
+const heartRectAudiences = document.querySelector('.js-heart-rect-audiences')
+const heartRectGoals = document.querySelector('.js-heart-rect-goals')
 
 // GIVING VALUE TO VARIABLES
 let heartRect = heart.getBoundingClientRect()
 let isInHeartRects = false
+let isOnHeartRectGoals = false
 let centerX = 0
 let centerY = 0
+let marqueeTitle = ''
 
 // RESIZE HEART FUNCTION
 function reportWindowSize() {
@@ -38,7 +49,6 @@ function customCursor({ clientX, clientY, target }) {
     })
 
     if (!isInHeartRects) {
-        console.log('out')
         cursorOutside.style.transform = `translate3d(calc(${clientX}px - 50%), calc(${clientY}px - 50%), 0)`
     }
     
@@ -52,19 +62,49 @@ function customCursor({ clientX, clientY, target }) {
 
 document.addEventListener('mousemove', customCursor)
 
-// CUSTOMC CURSOR HOVER FUNCTION
+// CUSTOM CURSOR HOVER FUNCTION
 heartRects.forEach(item => {
     item.addEventListener('mouseenter', () => {
-        marquee.style.display = 'flex'
+        let marqueeTitle = ''
+        if (item === heartRectGoals) {
+            marqueeTitle = 'Goals'
+        }
+        if (item === heartRectAudiences) {
+            marqueeTitle = 'Audiences'
+        }
+        if (item === heartRectInspiration) {
+            marqueeTitle = 'Inspiration'
+        }
+        if (item === heartRectBrandConcept) {
+            marqueeTitle = 'Brand Concept'
+        }
+        if (item === heartRectCompetitors) {
+            marqueeTitle = 'Competitors'
+        }
+        if (item === heartRectVisualIdentity) {
+            marqueeTitle = 'Visual Identity'
+        }
+        if (item === heartRectBrandStory) {
+            marqueeTitle = 'Brand Story'
+        }
+        if (item === heartRectToneOfVoice) {
+            marqueeTitle = 'Tone Of Voice'
+        }
+        marqueeTitleEls.forEach(el => {
+            el.textContent = marqueeTitle
+        })
+        marqueeWrapper.style.display = 'flex'
         chapterDescription.style.display = 'flex'
         cursorOutside.classList.add('ll-cursor-grow')
     })
+
     item.addEventListener('mouseleave', () => {
-        marquee.style.display = 'none'
+        marqueeWrapper.style.display = 'none'
         chapterDescription.style.display = 'none'
         cursorOutside.classList.remove('ll-cursor-grow')
     })
 })
+
 
 
 

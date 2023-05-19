@@ -3,10 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-// IMPORTING OTHER SCSS FILES
-@import "./styles/cursor.scss";
-@import "./styles/marquee.scss";
-
 // FONT
 @font-face {
     font-family: 'SuisseIntl-Light', sans-serif;
@@ -21,4 +17,6 @@
 
 body {
     font-family: 'SuisseIntl-Light';
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
