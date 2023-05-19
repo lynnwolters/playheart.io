@@ -1,0 +1,28 @@
+.ll-cursor-grow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1em;
+    transform-origin: center;
+}
+
+.ll-cursor-grow::after {
+    content: "";
+    width: 2em;
+    aspect-ratio: 1/1;
+    background-color: white;
+    position: absolute;
+    border-radius: .4em;
+    opacity: .2;
+    animation: cursorGrowAnimation .25s ease-in;
+}
+
+@keyframes cursorGrowAnimation {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

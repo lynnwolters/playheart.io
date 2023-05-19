@@ -38,6 +38,10 @@ module.exports = {
         '24': '24',
       },
       fontSize: {
+        xl: '8.375em',
+      },
+      transitionDuration: {
+        '1500': '1500ms',
       }
     },
     colors: {
