@@ -54,6 +54,7 @@ module.exports = {
       },
       fontSize: {
         xs: '0.75em',
+        sm: '1.875em',
         lg: '4.375em',
         xl: '8.375em',
       },
@@ -70,7 +71,9 @@ module.exports = {
       blue: '#DCF2F4',
       pink: '#F0D8E6',
       black: '#111314',
-      white: '#FFFFFF'
+      white: '#FFFFFF',
+      content: '#E8CFDE',
+      gray: '#7D7D7D',
     }
   },
   plugins: [],
