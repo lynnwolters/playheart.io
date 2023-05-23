@@ -61,7 +61,9 @@ module.exports = {
         '1500': '1500ms',
       },
       height: {
+        '100': '25em',
         '112': '28em',
+        '160': '40em',
       }
     },
     colors: {
