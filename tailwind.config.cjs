@@ -38,12 +38,30 @@ module.exports = {
         '23': '23',
         '24': '24',
       },
+      gridColumn: {
+        'span-13': 'span 13 / span 13',
+        'span-14': 'span 14 / span 14',
+        'span-15': 'span 15 / span 15',
+        'span-16': 'span 16 / span 16',
+        'span-17': 'span 17 / span 17',
+        'span-18': 'span 18 / span 18',
+        'span-19': 'span 19 / span 19',
+        'span-20': 'span 20 / span 20',
+        'span-21': 'span 21 / span 21',
+        'span-22': 'span 22 / span 22',
+        'span-23': 'span 23 / span 23',
+        'span-24': 'span 24 / span 24',
+      },
       fontSize: {
         xs: '0.75em',
+        lg: '4.375em',
         xl: '8.375em',
       },
       transitionDuration: {
         '1500': '1500ms',
+      },
+      height: {
+        '112': '28em',
       }
     },
     colors: {
