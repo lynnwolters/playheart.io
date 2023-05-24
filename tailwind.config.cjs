@@ -3,6 +3,13 @@ module.exports = {
   content: [
     "./src/index.html",
     "./src/goals.html",
+    "./src/audiences.html",
+    "./src/brand-concept.html",
+    "./src/brand-story.html",
+    "./src/competitors.html",
+    "./src/inspiration.html",
+    "./src/tone-of-voice.html",
+    "./src/visual-identity.html",
     "./src/*.js",
   ],
   theme: {
@@ -53,10 +60,8 @@ module.exports = {
         'span-24': 'span 24 / span 24',
       },
       fontSize: {
-        xs: '0.75em',
-        sm: '1.875em',
-        lg: '4.375em',
-        xl: '8.375em',
+        xs: '0.60em',
+        sm: '0.75em',
       },
       transitionDuration: {
         '1500': '1500ms',
@@ -65,8 +70,19 @@ module.exports = {
         '100': '25em',
         '112': '28em',
         '160': '40em',
-      }
+      },
+      aspectRatio: {
+        '3/4': '3 / 4',
+        '3/2': '3 / 2',
+      },
     },
+    screens: {
+      xl: { max: '1199px' },
+      lg: { max: '999px' },
+      md: { max: '799px' },
+      sm: { max: '599px' },
+      xs: { max: '400px' },
+    }, 
     colors: {
       blue: '#DCF2F4',
       pink: '#F0D8E6',
