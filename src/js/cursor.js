@@ -1,5 +1,6 @@
 // VARIABLES
 const cursorOutside = document.querySelector('.js-cursor-outside')
+const cursorOutsideDetail = document.querySelector('.js-cursor-outside-detail')
 const heart = document.querySelector('.js-heart')
 const heartRects = document.querySelectorAll('.js-heart-rect')
 const cursorInside = document.querySelector('.js-cursor-inside')
