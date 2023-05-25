@@ -7,6 +7,7 @@ const cursorInside = document.querySelector('.js-cursor-inside')
 const marqueeWrapper = document.querySelector('.js-marquee-wrapper')
 const chapterDescription = document.querySelector('.js-chapter-wrapper')
 const marqueeTitleEls = document.querySelectorAll('.js-marquee-title-el')
+const descriptionTextEls = document.querySelectorAll('.js-description-text-el')
 const heartRectToneOfVoice = document.querySelector('.js-heart-rect-tone-of-voice')
 const heartRectBrandStory = document.querySelector('.js-heart-rect-brand-story')
 const heartRectVisualIdentity = document.querySelector('.js-heart-rect-visual-identity')
@@ -22,7 +23,6 @@ let isInHeartRects = false
 let isOnHeartRectGoals = false
 let centerX = 0
 let centerY = 0
-let marqueeTitle = ''
 
 // RESIZE HEART FUNCTION
 function reportWindowSize() {
@@ -67,32 +67,44 @@ document.addEventListener('mousemove', customCursor)
 heartRects.forEach(item => {
     item.addEventListener('mouseenter', () => {
         let marqueeTitle = ''
+        let chapterDescriptionText = ''
         if (item === heartRectGoals) {
             marqueeTitle = 'Goals'
+            chapterDescriptionText = 'In this chapter you will find the goals that we have set up with Tree by Tree.'
         }
         if (item === heartRectAudiences) {
             marqueeTitle = 'Audiences'
+            chapterDescriptionText = 'Here you will find everything about the target group of Tree by Tree.'
         }
         if (item === heartRectInspiration) {
             marqueeTitle = 'Inspiration'
+            chapterDescriptionText = 'In this chapter you will find the inspiration that led us to the branding of Tree by Tree.'
         }
         if (item === heartRectBrandConcept) {
             marqueeTitle = 'Brand Concept'
+            chapterDescriptionText = 'Read how we visualized Tree by Tree\'s brand story.'
         }
         if (item === heartRectCompetitors) {
             marqueeTitle = 'Competitors'
+            chapterDescriptionText = 'Read about the competitors of Tree by Tree.'
         }
         if (item === heartRectVisualIdentity) {
             marqueeTitle = 'Visual Identity'
+            chapterDescriptionText = 'Here you can find everything about the visual identity of Tree by Tree.'
         }
         if (item === heartRectBrandStory) {
             marqueeTitle = 'Brand Story'
+            chapterDescriptionText = 'In this chapter you will read the brand story of Tree by Tree.'
         }
         if (item === heartRectToneOfVoice) {
             marqueeTitle = 'Tone Of Voice'
+            chapterDescriptionText = 'This chapter explains how Tree by Tree is communicating with their customers.'
         }
         marqueeTitleEls.forEach(el => {
             el.textContent = marqueeTitle
+        })
+        descriptionTextEls.forEach(el => {
+            el.textContent = chapterDescriptionText
         })
         marqueeWrapper.style.display = 'flex'
         chapterDescription.style.display = 'flex'

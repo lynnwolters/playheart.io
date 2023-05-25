@@ -11,18 +11,18 @@
         <title>Chapter Visual Identity - playheart.io</title>
 
         <!-- SCRIPTS -->
-        <script defer src="./js/menu.js"></script>
+        <script defer src="./js/mobile-menu.js"></script>
 
     </head>
 
     <body class="h-screen bg-pink">
 
         <!-- HEADER -->
-        <header class="w-full h-full flex justify-between items-start fixed top-0 p-2.5 z-50">
-            <a href="index.html">
+        <header class="w-full h-full flex justify-between items-start fixed top-0 p-2.5 z-50 pointer-events-none">
+            <a class="pointer-events-auto" href="index.html">
                 <svg xmlns="http://www.w3.org/2000/svg" width="45" height="36" fill="none"><path fill="#111314" d="M43.242 9.517h-6.391a1.232 1.232 0 0 1-1.249-1.22V2.032c0-.676-.556-1.22-1.248-1.22H27.95c-.692 0-1.248.544-1.248 1.22v6.263c0 .677-.557 1.221-1.249 1.221H19.05a1.232 1.232 0 0 1-1.249-1.22V2.032c0-.676-.556-1.22-1.248-1.22h-6.404c-.692 0-1.248.544-1.248 1.22v6.263c0 .677-.557 1.221-1.249 1.221H1.249C.556 9.517 0 10.061 0 10.738v6.251c0 .677.556 1.221 1.249 1.221H7.652c.692 0 1.249.544 1.249 1.221v6.263c0 .677.556 1.22 1.248 1.22h6.404c.692 0 1.248.545 1.248 1.222v6.263c0 .677.557 1.22 1.249 1.22h6.39c.693 0 1.25-.543 1.25-1.22v-6.251c0-.677.556-1.221 1.248-1.221h6.404c.692 0 1.248-.544 1.248-1.221v-6.263c0-.677.556-1.22 1.249-1.22H43.242c.692 0 1.249-.545 1.249-1.222v-6.25c.012-.69-.557-1.234-1.249-1.234Zm-8.9 0c.692 0 1.248.544 1.248 1.221v6.263c0 .677-.556 1.221-1.248 1.221H27.95a1.232 1.232 0 0 1-1.248-1.22V10.737c0-.677.556-1.22 1.248-1.22H34.342Zm-23.216 8.705h-.977a1.232 1.232 0 0 1-1.248-1.22V10.737c0-.677.556-1.22 1.248-1.22h6.404c.692 0 1.248.543 1.248 1.22v6.263c0 .677-.556 1.221-1.248 1.221H11.126Zm7.924 8.705a1.232 1.232 0 0 1-1.249-1.221v-6.263c0-.677.557-1.22 1.249-1.22h6.403c.692 0 1.249.543 1.249 1.22v6.263c0 .677-.557 1.221-1.249 1.221H19.05Z" opacity=".5"/><rect width="9" height="9" x="9" y="1" fill="#111314" rx="1"/></svg>
             </a>
-            <nav class="hidden md:block">
+            <nav class="hidden pointer-events-auto md:block">
                 <button class="bg-black py-1 px-2 rounded text-pink text-xs font-bold uppercase js-open-mobile-menu">Menu</button>
                 <nav class="absolute translate-x-full inset-0 p-2.5 bg-black transition duration-1000 ease-out ll-mobile-menu js-mobile-menu">
                     <button class="float-right bg-pink py-1 px-2 rounded  text-black text-xs font-bold uppercase js-close-mobile-menu">Close</button>
@@ -64,18 +64,30 @@
 
         <div class="grid grid-cols-24 gap-2.5 p-2.5">
 
+
             <!-- SIDE NAVIGATION -->
             <nav class="h-screen col-start-2 col-end-6 sticky top-20 md:hidden">
                 <div class="mb-6 text-xs font-bold uppercase">Menu</div>
                 <ul class="text-sm">
-                    <li class="mb-1.5"><a href="goals.html">Goals</a></li>
-                    <li class="mb-1.5"><a href="audiences.html">Audiences</a></li>
-                    <li class="mb-1.5"><a href="inspiration.html">Inspiration</a></li>
-                    <li class="mb-1.5"><a href="brand-concept.html">Brand concept</a></li>
-                    <li class="mb-1.5"><a href="competitors.html">Competitors</a></li>
-                    <li class="mb-1.5 font-bold"><a href="visual-identity.html">Visual identity</a></li>
-                    <li class="mb-1.5"><a href="brand-story.html">Brand story</a></li>
-                    <li class="mb-1.5"><a href="tone-of-voice.html">Tone of voice</a></li>
+                    <li class="mb-1.5"><a class="relative ll-underline" href="goals.html">Goals</a></li>
+                    <li class="mb-1.5"><a class="relative ll-underline" href="audiences.html">Audiences</a></li>
+                    <li class="mb-1.5"><a class="relative ll-underline" href="inspiration.html">Inspiration</a></li>
+                    <li class="mb-1.5"><a class="relative ll-underline" href="brand-concept.html">Brand concept</a></li>
+                    <li class="mb-1.5"><a class="relative ll-underline" href="competitors.html">Competitors</a></li>
+                    <li class="mb-1.5 font-bold">
+                        <a class="relative ll-underline" href="visual-identity.html">Visual identity</a>
+                        <nav class="js-sub-menu">
+                            <ul class="text-sm">
+                                <li class="my-1"><a class="relative ll-underline" href="#social">Social</a></li>
+                                <li class="my-1"><a class="relative ll-underline" href="#email">Email</a></li>
+                                <li class="my-1"><a class="relative ll-underline" href="#outdoor">Outdoor</a></li>
+                                <li class="my-1"><a class="relative ll-underline" href="#print">Print</a></li>
+                                <li class="my-1"><a class="relative ll-underline" href="#uiux">UI/UX</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="mb-1.5"><a class="relative ll-underline" href="brand-story.html">Brand story</a></li>
+                    <li class="mb-1.5"><a class="relative ll-underline" href="tone-of-voice.html">Tone of voice</a></li>
                 </ul>
             </nav>
 
@@ -83,7 +95,7 @@
             <main class="col-start-6 col-end-24 md:col-span-24">
 
                 <!-- SECTION 1 -->
-                <section class="grid grid-cols-2 gap-2.5 mb-28 md:mb-16">
+                <section class="grid grid-cols-2 gap-2.5 mb-28 md:mb-16" id="social">
                     <div class="col-span-1 xs:col-span-2">
                         <div class="aspect-[3/4]">
                             <img class="w-full h-full object-cover rounded-2xl" src="./img/img-2.png" alt="img-2">
@@ -113,7 +125,7 @@
                 </section>
 
                 <!-- SECTION 2 -->
-                <section class="grid grid-cols-8 gap-2.5 mb-28 md:mb-16">
+                <section class="grid grid-cols-8 gap-2.5 mb-28 md:mb-16" id="email">
                     <div class="col-span-7 mb-6">
                         <div class="mb-6 text-xs font-bold uppercase">Concept</div>
                         <div class="text-7xl xl:text-6xl lg:text-5xl">HCS is the almost best tech company. Because the nr. 2 always works harder.</div>
@@ -127,7 +139,7 @@
                 </section>
 
                 <!-- SECTION 3 -->
-                <section class="grid grid-cols-6 gap-2.5 mb-28 md:mb-16">
+                <section class="grid grid-cols-6 gap-2.5 mb-28 md:mb-16" id="outdoor">
                     <div class="col-start-1 col-end-4 aspect-square">
                         <img class="w-full h-full object-cover rounded-2xl" src="./img/img-3.jpg" alt="img-3">
                     </div>
@@ -155,13 +167,13 @@
                 </section>
 
                 <!-- SECTION 4 -->
-                <section class="mb-28 md:mb-16">
+                <section class="mb-28 md:mb-16" id="print">
                     <div class="text-7xl xl:text-6xl lg:text-5xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                         Ut enim ad minim veniam.</div>
                 </section>
 
                 <!-- SECTION 5 -->
-                <section class="grid grid-cols-6 gap-2.5 mb-28 md:mb-16">
+                <section class="grid grid-cols-6 gap-2.5 mb-28 md:mb-16" id="uiux">
                     <div class="col-span-2 sm:col-span-3 xs:col-span-6">
                         <div class="aspect-[3/4] sm:aspect-square">
                             <img class="w-full h-full object-cover rounded-2xl" src="./img/img-10.jpg" alt="img-10">
