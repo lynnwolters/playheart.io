@@ -7,7 +7,7 @@ const cursorInside = document.querySelector('.js-cursor-inside')
 const marqueeWrapper = document.querySelector('.js-marquee-wrapper')
 const chapterDescription = document.querySelector('.js-chapter-wrapper')
 const marqueeTitleEls = document.querySelectorAll('.js-marquee-title-el')
-const descriptionTextEls = document.querySelectorAll('.js-description-text-el')
+const chapterDescriptionTextEls = document.querySelectorAll('.js-chapter-description-text-el')
 const heartRectToneOfVoice = document.querySelector('.js-heart-rect-tone-of-voice')
 const heartRectBrandStory = document.querySelector('.js-heart-rect-brand-story')
 const heartRectVisualIdentity = document.querySelector('.js-heart-rect-visual-identity')
@@ -103,17 +103,19 @@ heartRects.forEach(item => {
         marqueeTitleEls.forEach(el => {
             el.textContent = marqueeTitle
         })
-        descriptionTextEls.forEach(el => {
+        chapterDescriptionTextEls.forEach(el => {
             el.textContent = chapterDescriptionText
         })
         marqueeWrapper.style.display = 'flex'
         chapterDescription.style.display = 'flex'
+        chapterDescription.classList.add('fade-in')
         cursorOutside.classList.add('ll-cursor-grow')
     })
 
     item.addEventListener('mouseleave', () => {
         marqueeWrapper.style.display = 'none'
         chapterDescription.style.display = 'none'
+        chapterDescription.classList.remove('fade-in')
         cursorOutside.classList.remove('ll-cursor-grow')
     })
 })
