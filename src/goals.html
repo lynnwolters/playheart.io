@@ -43,6 +43,8 @@
             </nav>
         </header>
 
+        <main class="transition-fade" id="swup">
+
         <!-- MARQUEE -->
         <div class="w-full items-center justify-start text-pink text-9xl font-extralight whitespace-nowrap my-24 md:mb-16 md:text-8xl ll-marquee-wrapper">
             <div class="inline-block ll-marquee">
@@ -67,7 +69,7 @@
 
             <!-- SIDE NAVIGATION -->
             <nav class="h-screen col-start-2 col-end-6 sticky top-20 md:hidden">
-                <div class="mb-6 text-xs font-bold uppercase">Menu</div>
+                <div class="mb-6 text-pink text-xs font-bold uppercase">Menu</div>
                 <ul class="text-pink text-sm">
                     <li class="mb-1.5">
                         <a class="relative font-bold ll-underline" href="goals.html">Goals</a>
@@ -92,7 +94,7 @@
             </nav>
 
             <!-- SECTIONS CONTAINER -->
-            <main class="col-start-6 col-end-24 md:col-span-24">
+            <div class="col-start-6 col-end-24 md:col-span-24">
 
                 <!-- SECTION 1 -->
                 <section class="grid grid-cols-2 gap-2.5 mb-28 text-pink md:mb-16" id="social">
@@ -238,9 +240,11 @@
                     </div>
                 </section>
 
-            </main>
+            </div>
 
         </div>
+
+    </main>
 
     <!-- SCRIPTS -->
     <script type="module" src="/main.js"></script>
