@@ -27,11 +27,8 @@
     }
 }
 
-ll-description-text-el {
-    opacity: 0;
-    transition: all 2s ease-out;
-}
-
-ll-description-text-el.fade-in {
+.ll-fade-in {
     opacity: 1;
 }
+
+

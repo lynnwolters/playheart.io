@@ -16,6 +16,8 @@ const heartRectBrandConcept = document.querySelector('.js-heart-rect-brand-conce
 const heartRectInspiration = document.querySelector('.js-heart-rect-inspiration')
 const heartRectAudiences = document.querySelector('.js-heart-rect-audiences')
 const heartRectGoals = document.querySelector('.js-heart-rect-goals')
+const a = document.querySelectorAll('a');
+const button = document.querySelectorAll('button');
 
 // GIVING VALUE TO VARIABLES
 let heartRect = heart.getBoundingClientRect()
@@ -107,15 +109,32 @@ heartRects.forEach(item => {
             el.textContent = chapterDescriptionText
         })
         marqueeWrapper.style.display = 'flex'
-        chapterDescription.style.display = 'flex'
-        chapterDescription.classList.add('fade-in')
         cursorOutside.classList.add('ll-cursor-grow')
+        chapterDescription.classList.add('ll-fade-in')
     })
 
     item.addEventListener('mouseleave', () => {
         marqueeWrapper.style.display = 'none'
-        chapterDescription.style.display = 'none'
-        chapterDescription.classList.remove('fade-in')
+        cursorOutside.classList.remove('ll-cursor-grow')
+        chapterDescription.classList.remove('ll-fade-in')
+    })
+})
+
+// CURSOR GROW 
+a.forEach(item => {
+    item.addEventListener('mouseover', () => {
+        cursorOutside.classList.add('ll-cursor-grow')
+    })
+    item.addEventListener('mouseleave', () => {
+        cursorOutside.classList.remove('ll-cursor-grow')
+    })
+})
+
+button.forEach(item => {
+    item.addEventListener('mouseover', () => {
+        cursorOutside.classList.add('ll-cursor-grow')
+    })
+    item.addEventListener('mouseleave', () => {
         cursorOutside.classList.remove('ll-cursor-grow')
     })
 })

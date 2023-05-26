@@ -75,6 +75,9 @@ module.exports = {
         '3/4': '3 / 4',
         '3/2': '3 / 2',
       },
+      lineHeight: {
+        'leading-none': '100%'
+      }
     },
     screens: {
       xl: { max: '1199px' },
