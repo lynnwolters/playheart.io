@@ -1,6 +1,4 @@
-// VARIABLES
 const cursorOutside = document.querySelector('.js-cursor-outside')
-const cursorOutsideDetail = document.querySelector('.js-cursor-outside-detail')
 const heart = document.querySelector('.js-heart')
 const heartRects = document.querySelectorAll('.js-heart-rect')
 const cursorInside = document.querySelector('.js-cursor-inside')
@@ -19,14 +17,12 @@ const heartRectGoals = document.querySelector('.js-heart-rect-goals')
 const a = document.querySelectorAll('a');
 const button = document.querySelectorAll('button');
 
-// GIVING VALUE TO VARIABLES
 let heartRect = heart.getBoundingClientRect()
 let isInHeartRects = false
 let isOnHeartRectGoals = false
 let centerX = 0
 let centerY = 0
 
-// RESIZE HEART FUNCTION
 function reportWindowSize() {
     let windowHeight = window.innerHeight
     let windowWidth = window.innerWidth
@@ -36,7 +32,6 @@ function reportWindowSize() {
 
 window.addEventListener('resize', reportWindowSize)
 
-// CUSTOM CURSOR FUNCTION
 function customCursor({ clientX, clientY, target }) {
     heartRects.forEach(rectElement => {
         rectElement.addEventListener('mouseenter', () => {
@@ -65,7 +60,6 @@ function customCursor({ clientX, clientY, target }) {
 
 document.addEventListener('mousemove', customCursor)
 
-// CUSTOM CURSOR HOVER FUNCTION
 heartRects.forEach(item => {
     item.addEventListener('mouseenter', () => {
         let marqueeTitle = ''
@@ -120,7 +114,6 @@ heartRects.forEach(item => {
     })
 })
 
-// CURSOR GROW 
 a.forEach(item => {
     item.addEventListener('mouseover', () => {
         cursorOutside.classList.add('ll-cursor-grow')

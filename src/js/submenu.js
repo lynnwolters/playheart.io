@@ -1,4 +1,4 @@
-function subMenuScroll() { // functie
+export function subMenuScroll() { // functie
     const scrollPosition = window.scrollY // verticale scroll positie achterhalen van window
     document.querySelectorAll('.js-sub-menu li').forEach(item => { // loop over elk li element
         const sectionId = item.firstElementChild.getAttribute('href') // ga opzoek naar het eerste href element die je kan vinden
@@ -11,7 +11,5 @@ function subMenuScroll() { // functie
     })
 }
 
-document.addEventListener('DOMContentLoaded', () => { // onload
-    subMenuScroll() // functie aanroepen
-    window.addEventListener('scroll', subMenuScroll) // start functie als je begint met scrollen
-})
+window.addEventListener('scroll', subMenuScroll)
+
