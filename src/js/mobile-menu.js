@@ -5,7 +5,7 @@ let mobileMenu = document.querySelector('.js-mobile-menu')
 openMobileMenu.addEventListener('click', toggleMenu)
 closeMobileMenu.addEventListener('click', toggleMenu)
 
-export function toggleMenu() { 
+function toggleMenu() { 
     mobileMenu.classList.toggle('open')
 }
 

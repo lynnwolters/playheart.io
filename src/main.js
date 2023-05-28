@@ -7,29 +7,9 @@ import './styles/submenu.scss'
 import './styles/swup.scss'
 
 import './js/cursor.js'
-import './js/type-effect.js'
-import { subMenuScroll } from './js/submenu.js'
-import { initTypeEffect } from './js/type-effect.js'
 
 import Swup from 'swup'
 
-const swup = new Swup ({
-    
+const swup = new Swup({
+
 })
-
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOMContent completed!')
-    subMenuScroll() 
-    initTypeEffect()
-})
-
-swup.on('contentReplaced', () => {
-    console.log('Reload completed!')
-    subMenuScroll()
-    initTypeEffect()
-})
-
-
-
-
-

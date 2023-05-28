@@ -30,11 +30,19 @@ function animateLines() {
     })
 }
 
-export function initTypeEffect() {
+function initTypeEffect() {
     getLettersPerLine()
     emptyLines()
     animateLines()
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    initTypeEffect()
+})
+
+
+
+
 
 
 
