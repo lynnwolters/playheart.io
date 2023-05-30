@@ -1,9 +1,8 @@
 let lines = []
 let wordLines = []
-const wrapper = document.querySelector('.js-type-effect-wrapper')
+let wrapper = null
 
 function getLettersPerLine() {
-    if (!wrapper) return
     lines = [...wrapper.querySelectorAll('p')]
     wordLines = lines.map(p => {
         return p.textContent.split('')
@@ -30,15 +29,16 @@ function animateLines() {
     })
 }
 
-function initTypeEffect() {
+export function initTypeEffect() {
+    console.log('initTypeEffect')
+
+    wrapper = document.querySelector('.js-type-effect-wrapper')
+    if (!wrapper) return
+
     getLettersPerLine()
     emptyLines()
     animateLines()
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    initTypeEffect()
-})
 
 
 

@@ -27,6 +27,7 @@ function reportWindowSize() {
     let windowHeight = window.innerHeight
     let windowWidth = window.innerWidth
     heartRect = heart.getBoundingClientRect()
+    console.log(`Heart top: ${heartRect.top}`, `Heart left: ${heartRect.left}`)
     console.log(`Window hoogte: ${windowHeight}`, `Window breedte: ${windowWidth}`)
 }
 
@@ -39,6 +40,7 @@ function customCursor({ clientX, clientY, target }) {
             const rect = rectElement.getBoundingClientRect()
             centerX = rect.left + rect.width / 2
             centerY = rect.top + rect.height / 2
+            console.log('from cursor outside:', centerX, centerY)
             cursorOutside.style.transform = `translate3d(calc(${centerX}px - 50%), calc(${centerY}px - 50%), 0)`
         })
         rectElement.addEventListener('mouseleave', () => {
@@ -52,6 +54,7 @@ function customCursor({ clientX, clientY, target }) {
     
     if (target.closest('.js-heart')) {
         cursorInside.style.opacity = 1
+        // console.log('from cursor inside:', heartRect.left, heartRect.top)
         cursorInside.style.transform = `translate3d(calc(${clientX - heartRect.left}px), calc(${clientY - heartRect.top}px), 0)`
     } else {
         cursorInside.style.opacity = 0

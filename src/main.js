@@ -7,9 +7,30 @@ import './styles/submenu.scss'
 import './styles/swup.scss'
 
 import './js/cursor.js'
+import { initTypeEffect } from './js/type-effect'
 
 import Swup from 'swup'
 
 const swup = new Swup({
 
+})
+
+swup.on('contentReplaced', () => {
+    initPage()
+})
+
+
+function initApp() {
+    console.log('initApp')
+    // initCursor()
+    initPage()
+}
+
+function initPage() {
+    console.log('initPage')
+    initTypeEffect()
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initApp()
 })

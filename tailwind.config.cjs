@@ -77,7 +77,7 @@ module.exports = {
       },
       lineHeight: {
         'leading-none': '100%'
-      }
+      },
     },
     screens: {
       xl: { max: '1199px' },
