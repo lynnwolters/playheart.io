@@ -9,26 +9,13 @@ import './styles/swup.scss'
 import './js/cursor.js'
 import { initTypeEffect } from './js/type-effect'
 
-import Swup from 'swup'
+import { App } from './js/app'
 
-const swup = new Swup({
-
-})
-
-swup.on('contentReplaced', () => {
-    initPage()
-})
-
+export let app = null
 
 function initApp() {
-    console.log('initApp')
     // initCursor()
-    initPage()
-}
-
-function initPage() {
-    console.log('initPage')
-    initTypeEffect()
+    app = new App()
 }
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -33,6 +33,10 @@ function reportWindowSize() {
 
 window.addEventListener('resize', reportWindowSize)
 
+function customCursorAak(event) {
+    console.log({ clientX, clientY, target })
+}
+
 function customCursor({ clientX, clientY, target }) {
     heartRects.forEach(rectElement => {
         rectElement.addEventListener('mouseenter', () => {
@@ -61,7 +65,8 @@ function customCursor({ clientX, clientY, target }) {
     }
 }
 
-document.addEventListener('mousemove', customCursor)
+// document.addEventListener('mousemove', customCursor)
+document.addEventListener('mousemove', customCursorAak)
 
 heartRects.forEach(item => {
     item.addEventListener('mouseenter', () => {
