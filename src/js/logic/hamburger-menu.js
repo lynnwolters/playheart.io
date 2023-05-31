@@ -4,17 +4,24 @@ export class HamburgerMenu {
     }
 
     init = () => {
+        this.mobileMenu = document.querySelector('.js-mobile-menu')
+        this.openMobileMenu = document.querySelector('.js-open-mobile-menu')
+        this.closeMobileMenu = document.querySelector('.js-close-mobile-menu')
 
+        this.bindEvents()
+    }
+
+    bindEvents = () => {
+        this.openMobileMenu.addEventListener('click', () => {
+            this.toggleMenu()
+        })
+
+        this.closeMobileMenu.addEventListener('click', () => {
+            this.toggleMenu()
+        })
+    }
+
+    toggleMenu = () => {
+        this.mobileMenu.classList.toggle('open')
     }
 }
-
-// let openMobileMenu = document.querySelector('.js-open-mobile-menu')
-// let closeMobileMenu = document.querySelector('.js-close-mobile-menu')
-// let mobileMenu = document.querySelector('.js-mobile-menu')
-
-// openMobileMenu.addEventListener('click', toggleMenu)
-// closeMobileMenu.addEventListener('click', toggleMenu)
-
-// function toggleMenu() { 
-//     mobileMenu.classList.toggle('open')
-// }

@@ -4,7 +4,7 @@ export class Navigation {
     }
 
     init = () => {
-
+        this.bindEvents()
     }
 }
 
