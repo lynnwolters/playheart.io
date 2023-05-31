@@ -1,36 +1,47 @@
-let line = [] 
-let words = [] 
-let wrapper = null 
+export class TypeEffect {
+    constructor() {
+        this.init()
+    }
 
-function splitLineInWords() {
-    line = wrapper.querySelector('p') 
-    words = line.textContent.split(' ')
-    console.log(words) 
+    init = () => {
+
+    }
 }
 
-function emptyLine() {
-    line.textContent = ''
-    wrapper.style.opacity = 1
-}
 
-function animateLine() {
-    words.forEach((word, index) => {
-    setTimeout(() => {
-        const span = document.createElement('span')
-        span.textContent = word
-        span.classList.add('fade-in')
-        line.appendChild(span)
-      }, 400 * index)
-    })
-}
+// let line = [] 
+// let words = [] 
+// let wrapper = null 
 
-export function initTypeEffect() {
-    wrapper = document.querySelector('.js-type-effect-wrapper') 
-    if (!wrapper) return 
-    splitLineInWords() 
-    emptyLine()
-    animateLine()
-}
+// function splitLineInWords() {
+//     line = wrapper.querySelector('p') 
+//     words = line.textContent.split(' ')
+//     console.log(words) 
+// }
+
+// function emptyLine() {
+//     line.textContent = ''
+//     wrapper.style.opacity = 1
+// }
+
+// function animateLine() {
+//     words.forEach((word, index) => {
+//     setTimeout(() => {
+//         const span = document.createElement('span')
+//         span.textContent = word
+//         span.classList.add('fade-in')
+//         line.appendChild(span)
+//       }, 400 * index)
+//     })
+// }
+
+// export function initTypeEffect() {
+//     wrapper = document.querySelector('.js-type-effect-wrapper') 
+//     if (!wrapper) return 
+//     splitLineInWords() 
+//     emptyLine()
+//     animateLine()
+// }
 
 // let lines = []
 // let wordLines = []

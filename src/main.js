@@ -6,18 +6,14 @@ import './styles/underline-hover.scss'
 import './styles/submenu.scss'
 import './styles/swup.scss'
 
-import './js/cursor.js'
-import { initTypeEffect } from './js/type-effect'
+import { App } from './js/app' // import app class uit ander js file
 
-import { App } from './js/app'
+export let app = null // nieuwe app variable die standaard op ongedefinieerd staat
 
-export let app = null
-
-function initApp() {
-    // initCursor()
-    app = new App()
+function initApp() { // init app functie definieren en daarin een nieuwe versie van app class aanmaken en toevoegn aan de app variable
+    app = new App() 
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    initApp()
+document.addEventListener('DOMContentLoaded', () => { // init app functie van hierboven aanroepen als de website is geladen of herladen
+    initApp() 
 })
