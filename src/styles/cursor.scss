@@ -27,8 +27,14 @@
     }
 }
 
-.ll-fade-in {
+.ll-description-fade-in {
     opacity: 1;
+}
+
+.ll-text-effect-fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+    animation-delay: 1s;
 }
 
 // .ll-animate-beat {

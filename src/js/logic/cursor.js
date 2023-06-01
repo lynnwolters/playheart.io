@@ -122,13 +122,13 @@
 //         })
 //         marqueeWrapper.style.display = 'flex'
 //         cursorOutside.classList.add('ll-cursor-grow')
-//         chapterDescription.classList.add('ll-fade-in')
+//         chapterDescription.classList.add('ll-description-fade-in')
 //     })
 
 //     item.addEventListener('mouseleave', () => {
 //         marqueeWrapper.style.display = 'none'
 //         cursorOutside.classList.remove('ll-cursor-grow')
-//         chapterDescription.classList.remove('ll-fade-in')
+//         chapterDescription.classList.remove('ll-description-fade-in')
 //     })
 // })
 
