@@ -1,12 +1,21 @@
-// export class Cursor {
-//     constructor() {
-//         this.init()
-//     }
+import { marquee } from '../page' 
 
-//     init = () => {
-        
-//     }
-// }
+export class Cursor {
+    constructor() {
+        this.heart = document.querySelector('.js-heart')
+        this.init()
+    }
+
+    init = () => {
+        this.bindEvents()
+    }
+
+    bindEvents = () => {
+        this.heart.addEventListener('mouseover', () => {
+            marquee.helloWorld() 
+        })
+    }
+}
 
 // const cursorOutside = document.querySelector('.js-cursor-outside')
 // const heart = document.querySelector('.js-heart')
@@ -24,8 +33,8 @@
 // const heartRectInspiration = document.querySelector('.js-heart-rect-inspiration')
 // const heartRectAudiences = document.querySelector('.js-heart-rect-audiences')
 // const heartRectGoals = document.querySelector('.js-heart-rect-goals')
-// const a = document.querySelectorAll('a');
-// const button = document.querySelectorAll('button');
+// const a = document.querySelectorAll('a')
+// const button = document.querySelectorAll('button')
 
 // let heartRect = heart.getBoundingClientRect()
 // let isInHeartRects = false

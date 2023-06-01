@@ -6,6 +6,7 @@ import './styles/submenu.scss'
 import './styles/swup.scss'
 
 import { App } from './js/app' 
+import { TypeEffect } from './js/logic/type-effect' 
 
 export let app = null 
 
@@ -15,4 +16,5 @@ function initApp() {
 
 document.addEventListener('DOMContentLoaded', () => { 
     initApp() 
+    new TypeEffect() 
 })

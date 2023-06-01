@@ -1,24 +1,26 @@
 import { HamburgerMenu } from './logic/hamburger-menu.js'
 import { Navigation } from './logic/navigation.js'
-import { TypeEffect } from './logic/type-effect.js'
-// import { Cursor } from './logic/cursor.js'
-// import { Heart } from './logic/heart.js'
-// import { Marquee } from './logic/marquee.js'
+import { Cursor } from './logic/cursor.js' 
+import { Marquee } from './logic/marquee.js'
+
+export let marquee 
 
 export class Page { 
     constructor () {
         this.title = document.title 
-        console.log('initPage: ', this.title) 
         this.init() 
     }
 
     init = () => { 
         this.hamburgerMenu = new HamburgerMenu() 
-        this.navigation = new Navigation() 
-        this.typeEffect = new TypeEffect() 
-        // this.cursor = new Cursor() 
-        // this.heart = new Heart() 
-        // this.marquee = new Marquee() 
+        this.navigation = new Navigation()
+        this.getPageTitle()
+        marquee = new Marquee() // instance wordt in variable gestopt (krijgt alle info van bijhorende class mee)
+        this.cursor = new Cursor()
+    }
+
+    getPageTitle = () => {
+        console.log('initPage: ', this.title) 
     }
 
     destroy = () => { 
