@@ -1,7 +1,9 @@
 export class Navigation {
     constructor() {
         this.subMenuItems = document.querySelectorAll('.js-sub-menu li')
-        this.init()
+        if (this.subMenuItems) {
+            this.init()
+        }
     }
 
     init = () => {
