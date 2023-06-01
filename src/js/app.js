@@ -1,18 +1,18 @@
-import { Page } from './page' // variable importeren
-import { Router } from './router' // variable importeren
+import { Page } from './page' 
+import { Router } from './router' 
 
-export class App { // niewe class aanmaken genaamd app + exportoren om in de main te gebruiken
+export class App { 
     constructor () {
-        this.init() // init method aanroepen zodat die als eerst wordt gelezen
+        this.init() 
     }
 
     init = () => {
-        this.router = new Router() // nieuwe versie van router class aanmaken en in variable stoppen
-        this.page = new Page() // nieuwe versie van page class aanmaken en in variable stoppen
+        this.router = new Router() 
+        this.page = new Page() 
     }
 
-    handleContentReplaced = () => { // handle content replaced method definieren
-        this.page.destroy() // roep destroy method aan als de content gereplaced is
-        this.page = new Page() // maak nieuwe pagina aan als content gereplaced is
+    handleContentReplaced = () => { 
+        this.page.destroy() 
+        this.page = new Page() 
     }
 }

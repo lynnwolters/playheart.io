@@ -17,28 +17,26 @@
         <!-- SWUP CONTAINER -->
         <div class="transition-fade" id="swup">
 
+
         <!-- HEADER -->
         <header class="w-full h-full flex justify-between items-start fixed top-0 p-2.5 z-50 pointer-events-none">
             <a class="pointer-events-auto" href="index.html">
                 <svg xmlns="http://www.w3.org/2000/svg" width="45" height="36" fill="none"><path fill="#F0D8E6" d="M43.242 9.517h-6.391a1.232 1.232 0 0 1-1.249-1.22V2.032c0-.676-.556-1.22-1.248-1.22H27.95c-.692 0-1.248.544-1.248 1.22v6.263c0 .677-.557 1.221-1.249 1.221H19.05a1.232 1.232 0 0 1-1.249-1.22V2.032c0-.676-.556-1.22-1.248-1.22h-6.404c-.692 0-1.248.544-1.248 1.22v6.263c0 .677-.557 1.221-1.249 1.221H1.249C.556 9.517 0 10.061 0 10.738v6.251c0 .677.556 1.221 1.249 1.221H7.652c.692 0 1.249.544 1.249 1.221v6.263c0 .677.556 1.22 1.248 1.22h6.404c.692 0 1.248.545 1.248 1.222v6.263c0 .677.557 1.22 1.249 1.22h6.39c.693 0 1.25-.543 1.25-1.22v-6.251c0-.677.556-1.221 1.248-1.221h6.404c.692 0 1.248-.544 1.248-1.221v-6.263c0-.677.556-1.22 1.249-1.22H43.242c.692 0 1.249-.545 1.249-1.222v-6.25c.012-.69-.557-1.234-1.249-1.234Zm-8.9 0c.692 0 1.248.544 1.248 1.221v6.263c0 .677-.556 1.221-1.248 1.221H27.95a1.232 1.232 0 0 1-1.248-1.22V10.737c0-.677.556-1.22 1.248-1.22H34.342Zm-23.216 8.705h-.977a1.232 1.232 0 0 1-1.248-1.22V10.737c0-.677.556-1.22 1.248-1.22h6.404c.692 0 1.248.543 1.248 1.22v6.263c0 .677-.556 1.221-1.248 1.221H11.126Zm7.924 8.705a1.232 1.232 0 0 1-1.249-1.221v-6.263c0-.677.557-1.22 1.249-1.22h6.403c.692 0 1.249.543 1.249 1.22v6.263c0 .677-.557 1.221-1.249 1.221H19.05Z" opacity=".5"/><rect width="9" height="9" x="9" y="1" fill="#F0D8E6" rx="1"/></svg>
             </a>
-            <nav class="hidden md:inline-block">
-                <button class="float-right bg-pink p-2 rounded text-black text-xs font-bold uppercase leading-none pointer-events-auto js-open-mobile-menu">Menu</button>
-                <nav class="absolute inset-0 p-2.5 opacity-0 bg-pink transition duration-300 ease-out ll-mobile-menu js-mobile-menu">
-                    <button class="float-right bg-black p-2 rounded text-pink text-xs font-bold uppercase leading-none pointer-events-auto js-close-mobile-menu">Close</button>
-                    <div class="h-full flex items-center justify-center">
-                        <ul class="text-black text-6xl pointer-events-auto xs:text-3xl">
-                            <li class="mb-1.5"><a href="goals.html">Goals</a></li>
-                            <li class="mb-1.5"><a href="audiences.html">Audiences</a></li>
-                            <li class="mb-1.5"><a href="inspiration.html">Inspiration</a></li>
-                            <li class="mb-1.5 font-semibold"><a href="brand-concept.html">Brand concept</a></li>
-                            <li class="mb-1.5"><a href="competitors.html">Competitors</a></li>
-                            <li class="mb-1.5"><a href="visual-identity.html">Visual identity</a></li>
-                            <li class="mb-1.5"><a href="brand-story.html">Brand story</a></li>
-                            <li class="mb-1.5"><a href="tone-of-voice.html">Tone of voice</a></li>
-                        </ul>
-                    </div>
-                </nav>
+            <button class="absolute hidden z-10 right-2.5 bg-pink p-2 rounded text-black text-xs font-bold uppercase leading-none pointer-events-auto md:block js-toggle-mobile-menu">Menu</button>
+            <nav class="absolute z-[5] opacity-0 pointer-events-none inset-0 p-2.5 bg-pink transition duration-300 ease-out js-mobile-menu">
+                <div class="h-full flex items-center justify-center">
+                    <ul class="text-black text-6xl xs:text-3xl">
+                        <li class="mb-1.5"><a href="goals.html">Goals</a></li>
+                        <li class="mb-1.5"><a href="audiences.html">Audiences</a></li>
+                        <li class="mb-1.5"><a href="inspiration.html">Inspiration</a></li>
+                        <li class="mb-1.5 font-semibold"><a href="brand-concept.html">Brand concept</a></li>
+                        <li class="mb-1.5"><a href="competitors.html">Competitors</a></li>
+                        <li class="mb-1.5"><a href="visual-identity.html">Visual identity</a></li>
+                        <li class="mb-1.5"><a href="brand-story.html">Brand story</a></li>
+                        <li class="mb-1.5"><a href="tone-of-voice.html">Tone of voice</a></li>
+                    </ul>
+                </div>
             </nav>
         </header>
 

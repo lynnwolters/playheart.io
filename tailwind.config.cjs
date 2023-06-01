@@ -76,7 +76,7 @@ module.exports = {
         '3/2': '3 / 2',
       },
       lineHeight: {
-        'leading-none': '100%'
+        'leading-none': '100%',
       },
     },
     screens: {

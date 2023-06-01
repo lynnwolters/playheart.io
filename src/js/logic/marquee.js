@@ -1,9 +1,9 @@
-export class Marquee {
-    constructor() {
-        this.init()
-    }
+// export class Marquee {
+//     constructor() {
+//         this.init()
+//     }
 
-    init = () => {
+//     init = () => {
         
-    }
-}
+//     }
+// }

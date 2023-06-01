@@ -1,12 +1,12 @@
-export class Navigation {
-    constructor() {
-        this.init()
-    }
+// export class Navigation {
+//     constructor() {
+//         this.init()
+//     }
 
-    init = () => {
-        this.bindEvents()
-    }
-}
+//     init = () => {
+//         this.bindEvents()
+//     }
+// }
 
 // function subMenuScroll() { // functie
 //     const scrollPosition = window.scrollY // verticale scroll positie achterhalen van window

@@ -1,12 +1,12 @@
-export class Cursor {
-    constructor() {
-        this.init()
-    }
+// export class Cursor {
+//     constructor() {
+//         this.init()
+//     }
 
-    init = () => {
+//     init = () => {
         
-    }
-}
+//     }
+// }
 
 // const cursorOutside = document.querySelector('.js-cursor-outside')
 // const heart = document.querySelector('.js-heart')

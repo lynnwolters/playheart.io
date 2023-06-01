@@ -1,13 +1,12 @@
-export class TypeEffect {
-    constructor() {
-        this.init()
-    }
+// export class TypeEffect {
+//     constructor() {
+//         this.init()
+//     }
 
-    init = () => {
+//     init = () => {
 
-    }
-}
-
+//     }
+// }
 
 // let line = [] 
 // let words = [] 

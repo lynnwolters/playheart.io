@@ -1,21 +1,21 @@
-import Swup from 'swup' // swup importeren
-import { app } from '../main' // app variable waar nieuwe versie van app class in zit importeren
+import Swup from 'swup'
+import { app } from '../main'
 
-export class Router { // niewe class aanmaken genaamd router + exporteren 
+export class Router {
     constructor () {
-        this.init() // init method aanroepen zodat die als eerst wordt gelezen
+        this.init()
     }
     
     init = () => { 
-        this.swup = new Swup({}) // nieuwe swup aanmaken en opslaan in een nieuwe variable
-        this.bindEvents() // bind events method aanroepen
+        this.swup = new Swup({}) 
+        this.bindEvents() 
     }
 
-    bindEvents = () => { // bind events functie definieren
+    bindEvents = () => { 
         this.swup.on('contentReplaced', this.contentReplaced) 
     }
 
-    contentReplaced = () => { // content replaced method definieren
-        app.handleContentReplaced() // roep handle content replaced aan op app
+    contentReplaced = () => { 
+        app.handleContentReplaced() 
     }
 }

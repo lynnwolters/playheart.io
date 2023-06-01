@@ -1,9 +1,9 @@
-export class Heart {
-    constructor() {
-        this.init()
-    }
+// export class Heart {
+//     constructor() {
+//         this.init()
+//     }
 
-    init = () => {
+//     init = () => {
         
-    }
-}
+//     }
+// }

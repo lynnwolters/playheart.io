@@ -1,19 +1,18 @@
 import './style.scss'
 import './styles/cursor.scss'
 import './styles/marquee.scss'
-import './styles/mobile-menu.scss'
 import './styles/underline-hover.scss'
 import './styles/submenu.scss'
 import './styles/swup.scss'
 
-import { App } from './js/app' // import app class uit ander js file
+import { App } from './js/app' 
 
-export let app = null // nieuwe app variable die standaard op ongedefinieerd staat
+export let app = null 
 
-function initApp() { // init app functie definieren en daarin een nieuwe versie van app class aanmaken en toevoegn aan de app variable
+function initApp() { 
     app = new App() 
 }
 
-document.addEventListener('DOMContentLoaded', () => { // init app functie van hierboven aanroepen als de website is geladen of herladen
+document.addEventListener('DOMContentLoaded', () => { 
     initApp() 
 })
