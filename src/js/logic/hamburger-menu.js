@@ -3,9 +3,10 @@ export class HamburgerMenu {
         this.mobileMenu = document.querySelector('.js-mobile-menu')
         this.isOpen = false
         this.toggleMenuButton = document.querySelector('.js-toggle-mobile-menu')
-        if (this.mobileMenu) {
-            this.init()
+        if (!this.mobileMenu) {
+            return false
         }
+        this.init()
     }
 
     init = () => {

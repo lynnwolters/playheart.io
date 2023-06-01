@@ -3,9 +3,10 @@ export class TypeEffect {
         this.words = []
         this.spanArray = []
         this.wrapper = document.querySelector('.js-type-effect-wrapper') 
-        if (this.wrapper) {
-            this.init()
+        if (!this.wrapper) {
+            return false
         }
+        this.init()
     }
 
     init = () => {

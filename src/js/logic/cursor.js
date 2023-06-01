@@ -1,8 +1,8 @@
 export class Cursor {
     constructor() {
         this.heart = document.querySelector('.js-heart')
-        if(this.heart) {
-            this.init()
+        if (!this.heart) {
+            return false
         }
         this.cursorOutside = document.querySelector('.js-cursor-outside')
         this.cursorInside = document.querySelector('.js-cursor-inside')
@@ -12,6 +12,7 @@ export class Cursor {
         this.isOnHeartRectGoals = false
         this.centerX = 0
         this.centerY = 0
+        this.init()
     }
 
     init = () => {
@@ -25,11 +26,7 @@ export class Cursor {
     }
 
     reportWindowSize = () => {
-        let windowHeight = window.innerHeight
-        let windowWidth = window.innerWidth
         this.heartRect = this.heart.getBoundingClientRect()
-        console.log(`Heart top: ${this.heartRect.top}`, `Heart left: ${this.heartRect.left}`)
-        console.log(`Window hoogte: ${this.windowHeight}`, `Window breedte: ${this.windowWidth}`)
     }
 
     customCursor = ({ clientX, clientY, target }) => {
