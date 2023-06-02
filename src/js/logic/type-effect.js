@@ -38,7 +38,7 @@ export class TypeEffect {
 
         this.spanArray.forEach((span, index) => {
             setTimeout(() => {
-                span.classList.add('ll-text-effect-fade-in')
+                span.classList.add('ll-type-effect-fade-in')
             }, 300 * index)
         })
     }

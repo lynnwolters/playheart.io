@@ -3,17 +3,16 @@ import { Router } from './router'
 
 export class App { 
     constructor () {
-        this.router = new Router() 
-        this.page = new Page() 
         this.init() 
     }
-
+    
     init = () => {
-        this.handleContentReplaced()
+        this.router = new Router() 
+        this.page = new Page() 
     }
 
     handleContentReplaced = () => { 
         this.page.destroy() 
-        this.page = new Page() 
+        this.page = new Page()
     }
 }

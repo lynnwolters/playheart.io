@@ -10,11 +10,10 @@
     background-repeat: repeat-x;
     background-position: 0 0;
     background-clip: content-box;
-    animation: underlineAnimation 3s linear infinite;
+    animation: underlineHover 3s linear infinite;
 }
 
-
-@keyframes underlineAnimation {
+@keyframes underlineHover {
     0% {
         background-position: 0 0;
     }

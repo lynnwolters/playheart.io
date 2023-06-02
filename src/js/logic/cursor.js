@@ -1,17 +1,14 @@
+import { app } from '../../main' 
+
 export class Cursor {
     constructor() {
-        this.heart = document.querySelector('.js-heart')
-        if (!this.heart) {
+        this.cursorOutside = document.querySelector('.js-cursor-outside')
+        if (!this.cursorOutside) {
             return false
         }
-        this.cursorOutside = document.querySelector('.js-cursor-outside')
         this.cursorInside = document.querySelector('.js-cursor-inside')
-        this.heartRect = this.heart.getBoundingClientRect()
-        this.heartRects = document.querySelectorAll('.js-heart-rect')
-        this.isInHeartRects = false
-        this.isOnHeartRectGoals = false
-        this.centerX = 0
-        this.centerY = 0
+        // this.isInHeartRects = false
+        this.update = true
         this.init()
     }
 
@@ -19,52 +16,48 @@ export class Cursor {
         this.bindEvents()
     }
 
-    bindEvents = () => {        
-        window.addEventListener('resize', this.reportWindowSize)
+    bindEvents = () => {    
         document.addEventListener('mousemove', this.customCursor)
-        document.addEventListener('mousemove', this.cursorGrow)
     }
 
-    reportWindowSize = () => {
-        this.heartRect = this.heart.getBoundingClientRect()
-    }
+    // ******************************************************* //
 
     customCursor = ({ clientX, clientY, target }) => {
-        this.heartRects.forEach(rectElement => {
-            rectElement.addEventListener('mouseenter', () => {
-                this.isInHeartRects = true
-                const rect = rectElement.getBoundingClientRect()
-                this.centerX = rect.left + rect.width / 2
-                this.centerY = rect.top + rect.height / 2
-                this.cursorOutside.style.transform = `translate3d(calc(${this.centerX}px - 50%), calc(${this.centerY}px - 50%), 0)`
-            })
-            rectElement.addEventListener('mouseleave', () => {
-                this.isInHeartRects = false
-            })
-        })
-
-        if (!this.isInHeartRects) {
+        // heartRectangles.forEach(rectElement => {
+        //     rectElement.addEventListener('mouseenter', () => {
+        //         isInHeartRects = true
+        //         cursorOutside.style.transform = `translate3d(calc(${centerX}px - 50%), calc(${centerY}px - 50%), 0)`
+        //     })
+        //     rectElement.addEventListener('mouseleave', () => {
+        //         isInHeartRects = false
+        //     })
+        // })
+    
+        // if (!isInHeartRects) {
+        if (this.update) {
             this.cursorOutside.style.transform = `translate3d(calc(${clientX}px - 50%), calc(${clientY}px - 50%), 0)`
         }
+        // }
         
-        if (target.closest('.js-heart')) {
-            this.cursorInside.style.opacity = 1
-            this.cursorInside.style.transform = `translate3d(calc(${clientX - this.heartRect.left}px), calc(${clientY - this.heartRect.top}px), 0)`
-        } else {
-            this.cursorInside.style.opacity = 0
-        }
+        // if (target.closest('.js-heart')) {
+        //     cursorInside.style.opacity = 1
+        //     cursorInside.style.transform = `translate3d(calc(${clientX - heartRect.left}px), calc(${clientY - heartRect.top}px), 0)`
+        // } else {
+        //     cursorInside.style.opacity = 0
+        // }
     }
 
-    cursorGrow = () => {
-        this.heartRects.forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                this.cursorOutside.classList.add('ll-cursor-grow')
-            })
+    // ******************************************************* //
 
-            item.addEventListener('mouseleave', () => {
-                this.cursorOutside.classList.remove('ll-cursor-grow')
-            })
-        })
+    snapTo = (x, y) => {
+        this.update = false
+        this.cursorOutside.style.transform = `translate3d(calc(${x}px - 50%), calc(${y}px - 50%), 0)`
+        this.cursorOutside.classList.add('ll-cursor-grow')
+    }
+
+    release = () => {
+        this.update = true
+        this.cursorOutside.classList.remove('ll-cursor-grow')
     }
 }
 

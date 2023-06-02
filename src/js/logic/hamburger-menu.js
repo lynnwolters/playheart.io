@@ -1,11 +1,11 @@
 export class HamburgerMenu {
     constructor() {
         this.mobileMenu = document.querySelector('.js-mobile-menu')
-        this.isOpen = false
-        this.toggleMenuButton = document.querySelector('.js-toggle-mobile-menu')
         if (!this.mobileMenu) {
             return false
         }
+        this.isOpen = false
+        this.toggleMenuButton = document.querySelector('.js-toggle-mobile-menu')
         this.init()
     }
 

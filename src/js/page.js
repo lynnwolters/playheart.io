@@ -1,6 +1,8 @@
 import { HamburgerMenu } from './logic/hamburger-menu.js'
 import { Navigation } from './logic/navigation.js'
 import { Cursor } from './logic/cursor.js' 
+import { Marquee } from './logic/marquee.js'
+import { Heart } from './logic/heart.js'
 
 export class Page { 
     constructor () {
@@ -12,7 +14,9 @@ export class Page {
         this.hamburgerMenu = new HamburgerMenu() 
         this.navigation = new Navigation()
         this.getPageTitle()
+        this.marquee = new Marquee()
         this.cursor = new Cursor()
+        this.heart = new Heart()
     }
 
     getPageTitle = () => {
