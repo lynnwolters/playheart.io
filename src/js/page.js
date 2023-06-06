@@ -3,6 +3,7 @@ import { Navigation } from './logic/navigation.js'
 import { Cursor } from './logic/cursor.js' 
 import { Marquee } from './logic/marquee.js'
 import { Heart } from './logic/heart.js'
+import { TypeEffect } from './logic/type-effect.js'
 
 export class Page { 
     constructor () {
@@ -17,6 +18,7 @@ export class Page {
         this.marquee = new Marquee()
         this.cursor = new Cursor()
         this.heart = new Heart()
+        this.typeEffect = new TypeEffect()
     }
 
     getPageTitle = () => {

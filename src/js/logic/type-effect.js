@@ -1,48 +1,50 @@
 export class TypeEffect {
     constructor() {
-        this.words = []
-        this.spanArray = []
         this.wrapper = document.querySelector('.js-type-effect-wrapper') 
         if (!this.wrapper) {
             return false
         }
+        this.lines = []
+        this.wordLines = []
         this.init()
     }
 
     init = () => {
-        this.splitLineInWords()
-        this.emptyLine()
-        this.animateLine()
+        this.getLettersPerLine()
+        this.emptyLines()
+        this.animateLines()
     }
 
-    splitLineInWords = () => {
-        this.line = this.wrapper.querySelector('p')
-        this.words = this.line.textContent.split(' ')
+    getLettersPerLine = () => {
+        this.lines = [...this.wrapper.querySelectorAll('p')]
+        this.wordLines = this.lines.map(p => {
+            return p.textContent.split('')
+        })
     }
 
-    emptyLine = () => {
-        this.line.textContent = ''
+    emptyLines = () => {
+        this.lines.forEach(line => {
+            line.textContent = ''
+        })
         this.wrapper.style.opacity = 1
     }
 
-    animateLine = () => {
-        this.words.forEach((word) => {
-            const span = document.createElement('span')
-            span.classList.add('opacity-0')
-            span.textContent = word + ' '
-            this.line.appendChild(span)
-            this.spanArray.push(span)
-        })
-
-        this.line.classList.remove('opacity-0')
-
-        this.spanArray.forEach((span, index) => {
+    animateLines = () => {
+        this.lines.forEach((line, index) => {
+        let lineDuration = 50 * this.wordLines[index].length
+        console.log(lineDuration)
+        setTimeout(() => {
+            this.wordLines[index].forEach((letter, i) => {
             setTimeout(() => {
-                span.classList.add('ll-type-effect-fade-in')
-            }, 300 * index)
+                line.innerHTML += letter
+            }, 50 * i)
+            })
+        }, lineDuration * index)
         })
     }
 }
+
+
 
 
 

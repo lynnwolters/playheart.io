@@ -10,6 +10,7 @@ module.exports = {
     "./src/inspiration.html",
     "./src/tone-of-voice.html",
     "./src/visual-identity.html",
+    "./src/loading-screen.html",
     "./src/*.js",
   ],
   theme: {
@@ -30,6 +31,7 @@ module.exports = {
         '22': '22',
         '23': '23',
         '24': '24',
+        '25': '25',
       },
       gridColumnEnd: {
         '13': '13',
@@ -44,6 +46,7 @@ module.exports = {
         '22': '22',
         '23': '23',
         '24': '24',
+        '25': '25',
       },
       gridColumn: {
         'span-13': 'span 13 / span 13',
