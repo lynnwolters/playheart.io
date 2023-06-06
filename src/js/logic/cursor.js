@@ -7,7 +7,6 @@ export class Cursor {
             return false
         }
         this.cursorInside = document.querySelector('.js-cursor-inside')
-        // this.isInHeartRects = false
         this.update = true
         this.init()
     }
@@ -20,44 +19,24 @@ export class Cursor {
         document.addEventListener('mousemove', this.customCursor)
     }
 
-    // ******************************************************* //
-
-    customCursor = ({ clientX, clientY, target }) => {
-        // heartRectangles.forEach(rectElement => {
-        //     rectElement.addEventListener('mouseenter', () => {
-        //         isInHeartRects = true
-        //         cursorOutside.style.transform = `translate3d(calc(${centerX}px - 50%), calc(${centerY}px - 50%), 0)`
-        //     })
-        //     rectElement.addEventListener('mouseleave', () => {
-        //         isInHeartRects = false
-        //     })
-        // })
-    
-        // if (!isInHeartRects) {
+    customCursor = ({ clientX, clientY }) => {
         if (this.update) {
             this.cursorOutside.style.transform = `translate3d(calc(${clientX}px - 50%), calc(${clientY}px - 50%), 0)`
         }
-        // }
-        
-        // if (target.closest('.js-heart')) {
-        //     cursorInside.style.opacity = 1
-        //     cursorInside.style.transform = `translate3d(calc(${clientX - heartRect.left}px), calc(${clientY - heartRect.top}px), 0)`
-        // } else {
-        //     cursorInside.style.opacity = 0
-        // }
     }
 
-    // ******************************************************* //
-
-    snapTo = (x, y) => {
+    snapTo = (x, y, heartRect) => {
         this.update = false
         this.cursorOutside.style.transform = `translate3d(calc(${x}px - 50%), calc(${y}px - 50%), 0)`
         this.cursorOutside.classList.add('ll-cursor-grow')
+        this.cursorInside.style.transform = `translate3d(calc(${x - heartRect.left + heartRect.width / 2}px - 50%), calc(${y - heartRect.top + heartRect.height / 2}px - 50%), 0)`
+        this.cursorInside.style.opacity = 1
     }
 
     release = () => {
         this.update = true
         this.cursorOutside.classList.remove('ll-cursor-grow')
+        this.cursorInside.style.opacity = 0
     }
 }
 

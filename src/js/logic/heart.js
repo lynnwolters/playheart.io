@@ -40,7 +40,11 @@ export class Heart {
         let rect = rectangle.getBoundingClientRect()
         this.centerX = rect.left + rect.width / 2
         this.centerY = rect.top + rect.height / 2
-        app.page.cursor.snapTo(this.centerX, this.centerY)
+        app.page.cursor.snapTo(this.centerX, this.centerY, this.heartRect)
+    }
+
+    leaveHeartRect = () => {
+        app.page.cursor.release()
     }
 
     showMarquee = (rectangle) => {
@@ -49,9 +53,5 @@ export class Heart {
 
     hideMarquee = () => {
         app.page.marquee.hideMarquee()
-    }
-
-    leaveHeartRect = () => {
-        app.page.cursor.release()
     }
 }
