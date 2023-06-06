@@ -22,10 +22,12 @@ export class Heart {
         this.heartRectangles.forEach(rectangle => {
             rectangle.addEventListener('mouseenter', () => {
                 this.heartCalculation(rectangle)
+                this.showMarquee(rectangle)
             })
 
             rectangle.addEventListener('mouseleave', () => {
                 this.leaveHeartRect()
+                this.hideMarquee()
             })
         })
     }
@@ -39,6 +41,14 @@ export class Heart {
         this.centerX = rect.left + rect.width / 2
         this.centerY = rect.top + rect.height / 2
         app.page.cursor.snapTo(this.centerX, this.centerY)
+    }
+
+    showMarquee = (rectangle) => {
+        app.page.marquee.showMarquee(rectangle)
+    }
+
+    hideMarquee = () => {
+        app.page.marquee.hideMarquee()
     }
 
     leaveHeartRect = () => {
