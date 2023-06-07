@@ -55,12 +55,12 @@ export class Marquee {
             el.textContent = chapterDescriptionText
         })
         this.marqueeWrapper.style.display = 'flex'
-        this.chapterDescriptionWrapper.classList.add('ll-chapter-description-fade-in')
+        this.chapterDescriptionWrapper.style.display = 'flex'
     }
 
     hideMarquee = () => {
         this.marqueeWrapper.style.display = 'none'
-        this.chapterDescriptionWrapper.classList.remove('ll-chapter-description-fade-in')
+        this.chapterDescriptionWrapper.style.display = 'none'
     }
 }
 
