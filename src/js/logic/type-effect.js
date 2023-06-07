@@ -4,55 +4,53 @@ export class TypeEffect {
         if (!this.wrapper) {
             return false
         }
-        this.lines = []
-        this.wordLines = []
+        this.linesArray = []
+        this.wordsArray = []
+        this.spanArray = []
+        this.delay = 150
         this.init()
     }
 
     init = () => {
-        this.getLettersPerLine()
-        this.emptyLines()
-        this.animateLines()
+        this.playTypeEffect()
     }
 
-    getLettersPerLine = () => {
-        this.lines = [...this.wrapper.querySelectorAll('p')]
-        this.wordLines = this.lines.map(p => {
-            return p.textContent.split('')
+    splitLineInWords = () => {
+        this.linesArray = [...this.wrapper.querySelectorAll('p')]
+        this.wordsArray = this.linesArray.map(p => {
+            return p.textContent.split(' ')
         })
+        console.log(this.wordsArray)
     }
 
     emptyLines = () => {
-        this.lines.forEach(line => {
+        this.linesArray.forEach((line) => {
             line.textContent = ''
         })
-        this.wrapper.style.opacity = 1
     }
 
     animateLines = () => {
-        this.lines.forEach((line, index) => {
-        let lineDuration = 50 * this.wordLines[index].length
-        console.log(lineDuration)
-        setTimeout(() => {
-            this.wordLines[index].forEach((letter, i) => {
-            setTimeout(() => {
-                line.innerHTML += letter
-            }, 50 * i)
+        let lineDelay = 0
+        this.linesArray.forEach((line, index) => {
+            this.wordsArray[index].forEach((word, i) => {
+                const span = document.createElement('span')
+                span.textContent = word + ' '
+                span.classList.add('opacity-0')
+                line.appendChild(span)
+                this.spanArray.push(span)
+                setTimeout(() => {
+                    span.classList.add('ll-type-effect-fade-in')
+                }, this.delay * i + lineDelay * this.delay)
             })
-        }, lineDuration * index)
+            lineDelay += this.wordsArray[index].length
         })
     }
+
+    playTypeEffect = () => {
+        this.splitLineInWords()
+        this.emptyLines()
+        this.animateLines()
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
