@@ -5,8 +5,10 @@ import './styles/underline-hover.scss'
 import './styles/submenu.scss'
 import './styles/swup.scss'
 import './styles/type-effect.scss'
+import './styles/loading-screen.scss'
 
 import { App } from './js/app' 
+import { LoadingScreen } from './js/logic/loading-screen'
 
 export let app = null 
 
@@ -15,5 +17,6 @@ function initApp() {
 }
 
 document.addEventListener('DOMContentLoaded', () => { 
-    initApp() 
+    new LoadingScreen()
+    initApp()
 })

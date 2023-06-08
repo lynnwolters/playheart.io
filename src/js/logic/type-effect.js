@@ -1,13 +1,15 @@
 export class TypeEffect {
-    constructor() {
-        this.wrapper = document.querySelector('.js-type-effect-wrapper') 
+    constructor(className = '.js-type-effect', options) {
+        this.wrapper = document.querySelector(className) 
+        this.options = options
         if (!this.wrapper) {
             return false
         }
         this.linesArray = []
         this.wordsArray = []
         this.spanArray = []
-        this.delay = 175
+        this.wordDelay = 300
+        this.lineLength = 0
         this.init()
     }
 
@@ -30,7 +32,6 @@ export class TypeEffect {
     }
 
     animateLines = () => {
-        let lineDelay = 0
         this.linesArray.forEach((line, index) => {
             this.wordsArray[index].forEach((word, i) => {
                 const span = document.createElement('span')
@@ -39,11 +40,19 @@ export class TypeEffect {
                 line.appendChild(span)
                 this.spanArray.push(span)
                 setTimeout(() => {
-                    span.classList.add('ll-type-effect-fade-in')
-                }, this.delay * i + lineDelay * this.delay)
+                span.classList.add('ll-type-effect-fade-in')
+                }, this.wordDelay * i + this.lineLength * this.wordDelay)
             })
-            lineDelay += this.wordsArray[index].length
+            this.lineLength += this.wordsArray[index].length
         })
+    
+        this.animationDuration = this.lineLength
+
+        setTimeout(() => {
+            if (this.options.callback) {
+                this.options.callback()
+            }
+        }, this.animationDuration * this.wordDelay)
     }
 
     playTypeEffect = () => {
