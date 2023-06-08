@@ -25,28 +25,35 @@ export class Marquee {
         let chapterDescriptionText = ''
         if (rectangle === this.heartRectangleGoals) {
             marqueeText = 'Goals'
-            chapterDescriptionText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.'
+            chapterDescriptionText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.'
         }
         if (rectangle === this.heartRectangleAudiences) {
             marqueeText = 'Audiences'
+            chapterDescriptionText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.'
         }
         if (rectangle === this.heartRectangleInspiration) {
             marqueeText = 'Inspiration'
+            chapterDescriptionText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.'
         }
         if (rectangle === this.heartRectangleBrandConcept) {
             marqueeText = 'Brand Concept'
+            chapterDescriptionText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.'
         }
         if (rectangle === this.heartRectangleCompetitors) {
             marqueeText = 'Competitors'
+            chapterDescriptionText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.'
         }
         if (rectangle === this.heartRectangleVisualIdentity) {
             marqueeText = 'Visual Identity'
+            chapterDescriptionText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.'
         }
         if (rectangle === this.heartRectangleBrandStory) {
             marqueeText = 'Brand Story'
+            chapterDescriptionText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.'
         }
         if (rectangle === this.heartRectangleToneOfVoice) {
             marqueeText = 'Tone Of Voice'
+            chapterDescriptionText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.'
         }
         this.marqueeTextElements.forEach(el => {
             el.textContent = marqueeText
@@ -55,12 +62,12 @@ export class Marquee {
             el.textContent = chapterDescriptionText
         })
         this.marqueeWrapper.style.display = 'flex'
-        this.chapterDescriptionWrapper.style.display = 'flex'
+        this.chapterDescriptionWrapper.style.opacity = '1'
     }
 
     hideMarquee = () => {
         this.marqueeWrapper.style.display = 'none'
-        this.chapterDescriptionWrapper.style.display = 'none'
+        this.chapterDescriptionWrapper.style.opacity = '0'
     }
 }
 

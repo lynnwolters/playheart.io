@@ -4,6 +4,7 @@ import './styles/marquee.scss'
 import './styles/underline-hover.scss'
 import './styles/submenu.scss'
 import './styles/swup.scss'
+import './styles/type-effect.scss'
 
 import { App } from './js/app' 
 
