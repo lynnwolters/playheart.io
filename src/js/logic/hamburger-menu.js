@@ -37,12 +37,10 @@ export class HamburgerMenu {
             this.toggleMenuButton.innerHTML = 'close'
             this.toggleMenuButton.style.backgroundColor = '#111314'
             this.toggleMenuButton.style.color = '#F0D8E6'
-            document.body.style.overflowY = 'hidden'
         } else {
             this.toggleMenuButton.innerHTML = 'menu'
             this.toggleMenuButton.style.backgroundColor = '#F0D8E6'
             this.toggleMenuButton.style.color = '#111314'
-            document.body.style.overflowY = 'auto'
         }
     }
 }

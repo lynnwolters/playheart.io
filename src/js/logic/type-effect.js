@@ -49,7 +49,7 @@ export class TypeEffect {
         this.animationDuration = this.lineLength
 
         setTimeout(() => {
-            if (this.options.callback) {
+            if (this.options?.callback) {
                 this.options.callback()
             }
         }, this.animationDuration * this.wordDelay)

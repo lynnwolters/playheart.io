@@ -1,5 +1,3 @@
-import { app } from '../../main' 
-
 export class Cursor {
     constructor() {
         this.cursorOutside = document.querySelector('.js-cursor-outside')
@@ -37,6 +35,14 @@ export class Cursor {
         this.update = true
         this.cursorOutside.classList.remove('ll-cursor-grow')
         this.cursorInside.style.opacity = 0
+    }
+
+    removeCursor = () => {
+        this.cursorOutside.style.display = 'none'
+    }
+
+    addCursor = () => {
+        this.cursorOutside.style.display = 'block'
     }
 }
 

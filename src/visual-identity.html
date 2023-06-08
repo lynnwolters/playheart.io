@@ -17,9 +17,12 @@
         <!-- SWUP CONTAINER -->
         <div class="transition-fade" id="swup">
 
+        <!-- CURSOR OUTSIDE -->
+        <div class="w-4 absolute top-0 left-0 aspect-square bg-white rounded transition duration-700 ease-out z-10 pointer-events-none md:hidden js-cursor-outside"></div>
+
         <!-- HEADER -->
         <header class="w-full h-full flex justify-between items-start fixed top-0 p-2.5 z-50 pointer-events-none">
-            <a class="pointer-events-auto" href="index.html">
+            <a class="pointer-events-auto js-remove-cursor" href="index.html">
                 <svg xmlns="http://www.w3.org/2000/svg" width="45" height="36" fill="none"><path fill="#F0D8E6" d="M43.242 9.517h-6.391a1.232 1.232 0 0 1-1.249-1.22V2.032c0-.676-.556-1.22-1.248-1.22H27.95c-.692 0-1.248.544-1.248 1.22v6.263c0 .677-.557 1.221-1.249 1.221H19.05a1.232 1.232 0 0 1-1.249-1.22V2.032c0-.676-.556-1.22-1.248-1.22h-6.404c-.692 0-1.248.544-1.248 1.22v6.263c0 .677-.557 1.221-1.249 1.221H1.249C.556 9.517 0 10.061 0 10.738v6.251c0 .677.556 1.221 1.249 1.221H7.652c.692 0 1.249.544 1.249 1.221v6.263c0 .677.556 1.22 1.248 1.22h6.404c.692 0 1.248.545 1.248 1.222v6.263c0 .677.557 1.22 1.249 1.22h6.39c.693 0 1.25-.543 1.25-1.22v-6.251c0-.677.556-1.221 1.248-1.221h6.404c.692 0 1.248-.544 1.248-1.221v-6.263c0-.677.556-1.22 1.249-1.22H43.242c.692 0 1.249-.545 1.249-1.222v-6.25c.012-.69-.557-1.234-1.249-1.234Zm-8.9 0c.692 0 1.248.544 1.248 1.221v6.263c0 .677-.556 1.221-1.248 1.221H27.95a1.232 1.232 0 0 1-1.248-1.22V10.737c0-.677.556-1.22 1.248-1.22H34.342Zm-23.216 8.705h-.977a1.232 1.232 0 0 1-1.248-1.22V10.737c0-.677.556-1.22 1.248-1.22h6.404c.692 0 1.248.543 1.248 1.22v6.263c0 .677-.556 1.221-1.248 1.221H11.126Zm7.924 8.705a1.232 1.232 0 0 1-1.249-1.221v-6.263c0-.677.557-1.22 1.249-1.22h6.403c.692 0 1.249.543 1.249 1.22v6.263c0 .677-.557 1.221-1.249 1.221H19.05Z" opacity=".5"/><rect width="9" height="9" x="9" y="1" fill="#F0D8E6" rx="1"/></svg>
             </a>
             <button class="absolute hidden z-10 right-2.5 bg-pink p-2 rounded text-black text-xs font-bold uppercase leading-none pointer-events-auto md:block js-toggle-mobile-menu">Menu</button>
@@ -64,7 +67,7 @@
             <!-- NAVIGATION -->
             <nav class="h-screen col-start-2 col-end-6 sticky top-20 md:hidden">
                 <div class="mb-6 text-pink text-xs font-bold uppercase">Menu</div>
-                <ul class="text-pink text-sm">
+                <ul class="text-pink text-sm js-remove-cursor">
                     <li class="mb-1.5">
                         <a class="relative ll-underline" href="goals.html">Goals</a>
                     </li>
@@ -166,8 +169,9 @@
 
                 <!-- SECTION 4 -->
                 <section class="mb-28 text-pink md:mb-16" id="print">
-                    <div class="text-7xl xl:text-6xl lg:text-5xl sm:text-4xl xs:text-3xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam.</div>
+                    <div class="mb-8 text-xs font-bold uppercase">Concept</div>
+                    <div class="mb-16 text-7xl xl:text-6xl lg:text-5xl sm:text-4xl xs:text-3xl">Lama Lama is a creative digital agency. We deliver digital changes for companies with a conscience and brands with a heart. We embrace a fluid approach, and use our expertise to create longevity and value for our clients for our clients  for our clients.</div>
+                    <div class="text-7xl xl:text-6xl lg:text-5xl sm:text-4xl xs:text-3xl">Lama Lama is a creative digital agency. We deliver digital changes for companies with a conscience and brands with a heart.</div>
                 </section>
 
                 <!-- SECTION 5 -->
@@ -215,23 +219,89 @@
 
                 <!-- SECTION 6 -->
                 <section class="grid grid-cols-6 gap-2.5 mb-28 text-pink md:mb-16">
-                    <div class="col-span-6 mb-2.5 text-xs font-bold uppercase">USPS</div>
+                    <div class="col-span-6 mb-2.5 text-xs font-bold uppercase">Usp's</div>
                     <div class="col-span-2 xs:col-span-3">
-                        <div class="mb-6 text-md">Budget-friendly</div>
+                        <div class="mb-6 text-3xl xl:text-lg">Budget-friendly</div>
                         <div class="text-sm xl:text-xs">
-                            At Lama Lama we create brands people fall in love with. To make our approach scalable we crafted the Play Heart Method. A template that humanises brands, 
+                            At Lama Lama we create brands people fall in love with. To make our approach scalable we crafted the Play Heart Method. A template that humanises brands. 
                         </div>
                     </div>
                     <div class="col-span-2 xs:col-span-3">
-                        <div class="mb-6 text-md">On-demand</div>
+                        <div class="mb-6 text-3xl xl:text-lg">On-demand</div>
                         <div class="text-sm xl:text-xs">
-                            At Lama Lama we create brands people fall in love with. To make our approach scalable we crafted the Play Heart Method. A template that humanises brands, 
+                            At Lama Lama we create brands people fall in love with. To make our approach scalable we crafted the Play Heart Method. A template that humanises brands. 
                         </div>
                     </div>
                     <div class="col-span-2 xs:col-span-3">
-                        <div class="mb-6 text-md">Always on</div>
+                        <div class="mb-6 text-3xl xl:text-lg">Always on</div>
                         <div class="text-sm xl:text-xs">
-                            At Lama Lama we create brands people fall in love with. To make our approach scalable we crafted the Play Heart Method. A template that humanises brands, 
+                            At Lama Lama we create brands people fall in love with. To make our approach scalable we crafted the Play Heart Method. A template that humanises brands. 
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 7 -->
+                <section class="grid grid-cols-3 gap-2.5 mb-28 text-pink md:mb-16">
+                    <div class="col-span-2 md:col-span-3">
+                        <div>
+                            <img class="w-full h-[475px] object-cover rounded-2xl xs:rounded-xl lg:h-[350px] md:h-[400px]" src="./img/img-6.jpg" alt="img-6">
+                        </div>
+                        <div class="grid grid-cols-6 gap-2.5 mt-2.5 text-sm xl:text-xs">
+                            <div class="col-start-1 col-end-3">Ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.</div>
+                            <div class="col-start-4 col-end-7 md:col-start-4 justify-self-end">Download: 
+                                <a href="#" class="underline" download>pdf,</a> 
+                                <a href="#" class="underline" download>jpeg,</a> 
+                                <a href="#" class="underline" download>eps</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-1 md:col-span-3">
+                        <div>
+                            <img class="w-full h-[475px] object-cover rounded-2xl xs:rounded-xl lg:h-[350px] md:h-[400px]" src="./img/img-13.jpg" alt="img-13">
+                        </div>
+                        <div class="grid grid-cols-6 gap-2.5 mt-2.5 text-sm xl:text-xs">
+                            <div class="col-start-1 col-end-4">Ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.</div>
+                            <div class="col-start-4 col-end-7 md:col-start-4 justify-self-end">Download: 
+                                <a href="#" class="underline" download>pdf,</a> 
+                                <a href="#" class="underline" download>jpeg,</a> 
+                                <a href="#" class="underline" download>eps</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 8 -->
+                <section class="grid grid-cols-6 gap-2.5 mb-28 text-pink md:mb-16">
+                    <div class="col-start-1 col-end-3 text-3xl sm:col-span-6 xl:text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</div>
+                    <div class="col-start-3 col-end-7 text-sm sm:col-span-6 xl:text-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                </section>
+
+                <!-- SECTION 9 -->
+                <section class="mb-28 text-pink md:mb-16">
+                    <div class="text-3xl xl:text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                </section>
+
+                <!-- SECTION 10 -->
+                <section class="grid grid-cols-3 gap-2.5 mb-28 text-pink md:mb-16">
+                    <div class="col-span-3">
+                        <img class="w-full h-full object-cover rounded-2xl xs:rounded-xl" src="./img/img-9.jpg" alt="img-9">
+                    </div>
+                    <div class="col-span-1 text-sm xl:text-xs sm:col-span-2 xs:col-span-3">At Lama Lama we create brands people fall in love with. To make our approach scalable we crafted the Play Heart Method. A template that humanises brands, </div>
+                </section>
+
+                <!-- SECTION 11 -->
+                <section class="grid grid-cols-4 gap-2.5 mb-28 text-pink md:mb-16">
+                    <div class="col-span-4 mb-2.5 text-xs font-bold uppercase">Usp's</div>
+                    <div class="col-span-2 xs:col-span-4">
+                        <div class="mb-6 text-3xl xl:text-lg">Budget-friendly</div>
+                        <div class="text-sm xl:text-xs">
+                            At Lama Lama we create brands people fall in love with. To make our approach scalable we crafted the Play Heart Method. A template that humanises brands. At Lama Lama we create brands people fall in love with. To make our approach scalable we crafted the Play Heart Method. A template that humanises brands. At Lama Lama we create brands people fall in love with. To make our approach scalable we crafted the Play Heart Method. A template that humanises brands.
+                        </div>
+                    </div>
+                    <div class="col-span-2 xs:col-span-4">
+                        <div class="mb-6 text-3xl xl:text-lg">On-demand</div>
+                        <div class="text-sm xl:text-xs">
+                            At Lama Lama we create brands people fall in love with. To make our approach scalable we crafted the Play Heart Method. A template that humanises brands. At Lama Lama we create brands people fall in love with. To make our approach scalable we crafted the Play Heart Method. A template that humanises brands. At Lama Lama we create brands people fall in love with. To make our approach scalable we crafted the Play Heart Method. A template that humanises brands.
                         </div>
                     </div>
                 </section>
