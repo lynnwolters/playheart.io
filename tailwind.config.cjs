@@ -62,23 +62,15 @@ module.exports = {
         'span-24': 'span 24 / span 24',
       },
       fontSize: {
-        xs: '0.60em',
-        sm: '0.75em',
+        xs: '.65em',
+        sm: '.8em',
       },
       transitionDuration: {
         '1500': '1500ms',
       },
-      height: {
-        '100': '25em',
-        '112': '28em',
-        '160': '40em',
-      },
       aspectRatio: {
         '3/4': '3 / 4',
         '3/2': '3 / 2',
-      },
-      lineHeight: {
-        'leading-none': '100%',
       },
     },
     screens: {
@@ -93,8 +85,6 @@ module.exports = {
       pink: '#F0D8E6',
       black: '#111314',
       white: '#FFFFFF',
-      content: '#E8CFDE',
-      gray: '#7D7D7D',
     }
   },
   plugins: [],

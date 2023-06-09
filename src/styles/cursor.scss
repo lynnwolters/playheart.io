@@ -33,6 +33,26 @@
     }
 }
 
+.ll-shrink-cursor {
+    animation: shrinkCursor .3s linear forwards;
+}
+
+@keyframes shrinkCursor {
+    0% {
+        width: 1em;
+        border-radius: .25em;
+    }
+
+    100% {
+        width: .7em;
+        border-radius: .15em;
+    }
+}
+
+.ll-hide-cursor {
+    display: none;
+}
+
 
 
 

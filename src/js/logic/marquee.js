@@ -62,12 +62,12 @@ export class Marquee {
             el.textContent = chapterDescriptionText
         })
         this.marqueeWrapper.style.display = 'flex'
-        this.chapterDescriptionWrapper.style.opacity = '1'
+        this.chapterDescriptionWrapper.style.display = 'flex'
     }
 
     hideMarquee = () => {
         this.marqueeWrapper.style.display = 'none'
-        this.chapterDescriptionWrapper.style.opacity = '0'
+        this.chapterDescriptionWrapper.style.display = 'none'
     }
 }
 

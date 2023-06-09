@@ -13,13 +13,27 @@ export class Cursor {
         this.bindEvents()
     }
 
+    bindEvents = () => {    
+        document.addEventListener('mousemove', this.customCursor)
+        this.bindShrinkElements()
+    }
+
     handleRouteChange = () => {
         this.release()
+        this.bindShrinkElements()
         this.cursorInside = document.querySelector('.js-cursor-inside')
     }
 
-    bindEvents = () => {    
-        document.addEventListener('mousemove', this.customCursor)
+    bindShrinkElements = () => {
+        let cursorShrinkSelector = document.querySelectorAll('.js-cursor-shrink-selector')
+        cursorShrinkSelector.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                this.shrinkCursor()
+            })
+            item.addEventListener('mouseleave', () => {
+                this.removeShrinkCursor()
+            })
+        })
     }
 
     customCursor = ({ clientX, clientY }) => {
@@ -44,12 +58,12 @@ export class Cursor {
         }
     }
 
-    removeCursor = () => {
-        this.cursorOutside.style.display = 'none'
+    shrinkCursor = () => {
+        this.cursorOutside.classList.add('ll-shrink-cursor')
     }
 
-    addCursor = () => {
-        this.cursorOutside.style.display = 'block'
+    removeShrinkCursor = () => {
+        this.cursorOutside.classList.remove('ll-shrink-cursor')
     }
 }
 

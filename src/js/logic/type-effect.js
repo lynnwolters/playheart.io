@@ -40,7 +40,7 @@ export class TypeEffect {
                 line.appendChild(span)
                 this.spanArray.push(span)
                 setTimeout(() => {
-                span.classList.add('ll-type-effect-fade-in')
+                span.classList.add('ll-show-type-effect')
                 }, this.wordDelay * i + this.lineLength * this.wordDelay)
             })
             this.lineLength += this.wordsArray[index].length
