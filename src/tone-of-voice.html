@@ -15,7 +15,7 @@
     <body class="h-screen bg-black">
 
         <!-- LOADING SCREEN -->
-        <div class="w-screen h-screen fixed top-0 left-0 flex p-2.5 items-end opacity-1 bg-pink pointer-events-none z-20 js-loading-screen">
+        <div class="w-screen h-screen fixed top-0 left-0 flex p-2.5 items-end opacity-1 bg-pink pointer-events-none z-100 js-loading-screen">
             <div class="text-7xl xl:text-6xl lg:text-5xl sm:text-4xl xs:text-3xl js-loading-screen-type-effect">
                 <p>Brands are like humans,</p>
                 <p>they can't survive</p>
@@ -75,29 +75,27 @@
 
             <!-- NAVIGATION -->
             <nav class="h-screen col-start-2 col-end-6 sticky top-20 md:hidden">
-                <div class="mb-6 text-pink text-xs font-bold uppercase">Menu</div>
-                <ul class="w-fit text-pink text-sm js-remove-cursor">
-                    <li class="mb-1.5">
-                        <a class="relative ll-underline" href="goals.html">Goals</a>
-                    </li>
-                    <li class="mb-1.5"><a class="relative ll-underline" href="audiences.html">Audiences</a></li>
-                    <li class="mb-1.5"><a class="relative ll-underline" href="inspiration.html">Inspiration</a></li>
-                    <li class="mb-1.5"><a class="relative ll-underline" href="brand-concept.html">Brand concept</a></li>
-                    <li class="mb-1.5"><a class="relative ll-underline" href="competitors.html">Competitors</a></li>
-                    <li class="mb-1.5"><a class="relative ll-underline" href="visual-identity.html">Visual identity</a></li>
-                    <li class="mb-1.5"><a class="relative ll-underline" href="brand-story.html">Brand story</a></li>
-                    <li class="mb-1.5">
-                        <a class="relative font-bold ll-underline" href="tone-of-voice.html">Tone of voice</a>
+                <div class="pb-6 text-pink text-xs font-bold uppercase">Menu</div>
+                <ul class="w-fit text-pink">
+                    <li class="pb-1.5 js-cursor-shrink-selector">
+                        <a class="relative text-sm font-bold ll-underline" href="goals.html">Goals</a>
                         <nav class="js-sub-menu">
-                            <ul class="text-sm">
-                                <li class="my-1"><a class="relative ll-underline" href="#social">Social</a></li>
-                                <li class="my-1"><a class="relative ll-underline" href="#email">Email</a></li>
-                                <li class="my-1"><a class="relative ll-underline" href="#outdoor">Outdoor</a></li>
-                                <li class="my-1"><a class="relative ll-underline" href="#print">Print</a></li>
-                                <li class="my-1"><a class="relative ll-underline" href="#uiux">UI/UX</a></li>
+                            <ul class="text-xs py-2">
+                                <li class="pb-1"><a class="relative ll-underline" href="#social">Social</a></li>
+                                <li class="pb-1"><a class="relative ll-underline" href="#email">Email</a></li>
+                                <li class="pb-1"><a class="relative ll-underline" href="#outdoor">Outdoor</a></li>
+                                <li class="pb-1"><a class="relative ll-underline" href="#print">Print</a></li>
+                                <li><a class="relative ll-underline" href="#uiux">UI/UX</a></li>
                             </ul>
                         </nav>
                     </li>
+                    <li class="pb-1.5 text-sm js-cursor-shrink-selector"><a class="relative ll-underline" href="audiences.html">Audiences</a></li>
+                    <li class="pb-1.5 text-sm js-cursor-shrink-selector"><a class="relative ll-underline" href="inspiration.html">Inspiration</a></li>
+                    <li class="pb-1.5 text-sm js-cursor-shrink-selector"><a class="relative ll-underline" href="brand-concept.html">Brand concept</a></li>
+                    <li class="pb-1.5 text-sm js-cursor-shrink-selector"><a class="relative ll-underline" href="competitors.html">Competitors</a></li>
+                    <li class="pb-1.5 text-sm js-cursor-shrink-selector"><a class="relative ll-underline" href="visual-identity.html">Visual identity</a></li>
+                    <li class="pb-1.5 text-sm js-cursor-shrink-selector"><a class="relative ll-underline" href="brand-story.html">Brand story</a></li>
+                    <li class="text-sm js-cursor-shrink-selector"><a class="relative ll-underline" href="tone-of-voice.html">Tone of voice</a></li>
                 </ul>
             </nav>
 

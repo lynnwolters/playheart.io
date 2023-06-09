@@ -34,7 +34,7 @@
 }
 
 .ll-shrink-cursor {
-    animation: shrinkCursor .3s linear forwards;
+    animation: shrinkCursor .2s linear forwards;
 }
 
 @keyframes shrinkCursor {
@@ -49,9 +49,6 @@
     }
 }
 
-.ll-hide-cursor {
-    display: none;
-}
 
 
 
