@@ -1,3 +1,4 @@
+import { app } from "../../main"
 import { TypeEffect } from "./type-effect"
 
 export class LoadingScreen {
@@ -12,9 +13,19 @@ export class LoadingScreen {
         this.init()
     }
 
-    init = () => {}
+    init = () => {
+        this.bindEvents()
+    }
+
+    bindEvents = () => {
+        this.loadingScreen.addEventListener('animationend', this.handleAnimationEnd)
+    }
 
     removeLoadingScreen = () => {
         this.loadingScreen.classList.add('ll-loading-screen-fade-out')
+    }
+
+    handleAnimationEnd = () => {
+        app.createPage(true)
     }
 }

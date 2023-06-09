@@ -13,12 +13,21 @@
     </head>
 
     <body class="h-screen bg-black">
-
-        <!-- SWUP CONTAINER -->
-        <div class="transition-fade" id="swup">
+        
+        <!-- LOADING SCREEN -->
+        <div class="w-screen h-screen fixed top-0 left-0 flex p-2.5 items-end opacity-1 bg-pink pointer-events-none z-20 js-loading-screen">
+            <div class="text-7xl xl:text-6xl lg:text-5xl sm:text-4xl xs:text-3xl js-loading-screen-type-effect">
+                <p>Brands are like humans,</p>
+                <p>they can't survive</p>
+                <p>without a beating heart.</p>
+            </div>
+        </div>
 
         <!-- CURSOR OUTSIDE -->
         <div class="w-4 fixed top-0 left-0 aspect-square bg-white rounded transition duration-700 ease-out z-10 pointer-events-none md:hidden js-cursor-outside"></div>
+
+        <!-- SWUP CONTAINER -->
+        <div class="transition-fade" id="swup">
 
         <!-- HEADER -->
         <header class="w-full h-full flex justify-between items-start fixed top-0 p-2.5 z-50 pointer-events-none">
@@ -67,7 +76,7 @@
             <!-- NAVIGATION -->
             <nav class="h-screen col-start-2 col-end-6 sticky top-20 md:hidden">
                 <div class="mb-6 text-pink text-xs font-bold uppercase">Menu</div>
-                <ul class="text-pink text-sm js-remove-cursor">
+                <ul class="w-fit text-pink text-sm js-remove-cursor">
                     <li class="mb-1.5">
                         <a class="relative font-bold ll-underline" href="goals.html">Goals</a>
                         <nav class="js-sub-menu">

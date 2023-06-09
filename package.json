@@ -19,6 +19,7 @@
     },
     "dependencies": {
         "@swup/scripts-plugin": "^1.1.0",
+        "gsap": "^3.12.1",
         "swup": "^3.0.7"
     }
 }

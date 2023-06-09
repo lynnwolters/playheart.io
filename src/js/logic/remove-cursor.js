@@ -25,10 +25,10 @@ export class RemoveCursor {
     }
 
     removeCursor = () => {
-        app.page.cursor.removeCursor()
+        app.cursor.removeCursor()
     }
 
     addCursor = () => {
-        app.page.cursor.addCursor()
+        app.cursor.addCursor()
     }
 }

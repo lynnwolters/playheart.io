@@ -38,13 +38,23 @@ export class Heart {
 
     heartCalculation = (rectangle) => {
         let rect = rectangle.getBoundingClientRect()
-        this.centerX = rect.left + rect.width / 2
-        this.centerY = rect.top + rect.height / 2
-        app.page.cursor.snapTo(this.centerX, this.centerY, this.heartRect)
+        const centerX = rect.left + rect.width / 2
+        const centerY = rect.top + rect.height / 2
+        const values = {
+            cursorOutside: {
+                x: centerX,
+                y: centerY,
+            },
+            cursorInside: {
+                x: centerX - this.heartRect.left + this.heartRect.width / 2,
+                y: centerY - this.heartRect.top + this.heartRect.height / 2,
+            }
+        }
+        app.cursor.snapTo(values)
     }
 
     leaveHeartRect = () => {
-        app.page.cursor.release()
+        app.cursor.release()
     }
 
     showMarquee = (rectangle) => {

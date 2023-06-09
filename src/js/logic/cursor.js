@@ -5,12 +5,17 @@ export class Cursor {
             return false
         }
         this.cursorInside = document.querySelector('.js-cursor-inside')
-        this.update = true
+        this.update = false
         this.init()
     }
 
     init = () => {
         this.bindEvents()
+    }
+
+    handleRouteChange = () => {
+        this.release()
+        this.cursorInside = document.querySelector('.js-cursor-inside')
     }
 
     bindEvents = () => {    
@@ -23,18 +28,20 @@ export class Cursor {
         }
     }
 
-    snapTo = (x, y, heartRect) => {
+    snapTo = (values) => {
         this.update = false
-        this.cursorOutside.style.transform = `translate3d(calc(${x}px - 50%), calc(${y}px - 50%), 0)`
+        this.cursorOutside.style.transform = `translate3d(calc(${values.cursorOutside.x}px - 50%), calc(${values.cursorOutside.y}px - 50%), 0)`
         this.cursorOutside.classList.add('ll-cursor-grow')
-        this.cursorInside.style.transform = `translate3d(calc(${x - heartRect.left + heartRect.width / 2}px - 50%), calc(${y - heartRect.top + heartRect.height / 2}px - 50%), 0)`
+        this.cursorInside.style.transform = `translate3d(calc(${values.cursorInside.x}px - 50%), calc(${values.cursorInside.y}px - 50%), 0)`
         this.cursorInside.style.opacity = 1
     }
 
     release = () => {
         this.update = true
         this.cursorOutside.classList.remove('ll-cursor-grow')
-        this.cursorInside.style.opacity = 0
+        if (this.cursorInside) {
+            this.cursorInside.style.opacity = 0
+        }
     }
 
     removeCursor = () => {
@@ -45,6 +52,7 @@ export class Cursor {
         this.cursorOutside.style.display = 'block'
     }
 }
+
 
 
 

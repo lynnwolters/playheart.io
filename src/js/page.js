@@ -5,22 +5,34 @@ import { Marquee } from './logic/marquee.js'
 import { Heart } from './logic/heart.js'
 import { TypeEffect } from './logic/type-effect.js'
 import { RemoveCursor } from './logic/remove-cursor.js'
+import { app } from '../main.js'
 
 export class Page { 
-    constructor () {
+    constructor (firstTime) {
         this.title = document.title 
-        this.init() 
+        this.init(firstTime)
+        console.log('initPage')
     }
 
-    init = () => { 
+    init = (firstTime) => {
+        if (!firstTime) {
+            app.cursor.handleRouteChange()
+        }
         this.hamburgerMenu = new HamburgerMenu() 
         this.navigationScroll = new NavigationScroll()
         this.getPageTitle()
         this.marquee = new Marquee()
-        this.cursor = new Cursor()
         this.heart = new Heart()
-        this.typeEffect = new TypeEffect()
-        this.removeCursor = new RemoveCursor()
+        // this.removeCursor = new RemoveCursor()
+        if (document.querySelector('.js-type-effect')) {
+            this.typeEffect = new TypeEffect(undefined, {
+                callback: () => {
+                    app.cursor.update = true
+                }
+            })
+        } else {
+            app.cursor.update = true
+        }
     }
 
     getPageTitle = () => {

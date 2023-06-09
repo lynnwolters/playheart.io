@@ -8,7 +8,7 @@ export class TypeEffect {
         this.linesArray = []
         this.wordsArray = []
         this.spanArray = []
-        this.wordDelay = 300
+        this.wordDelay = 100
         this.lineLength = 0
         this.init()
     }
