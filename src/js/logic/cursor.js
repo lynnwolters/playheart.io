@@ -44,9 +44,9 @@ export class Cursor {
 
     snapTo = (values) => {
         this.update = false
-        this.cursorOutside.style.transform = `translate3d(calc(${values.cursorOutside.x}px - 50%), calc(${values.cursorOutside.y}px - 50%), 0)`
+        this.cursorOutside.style.transform = `translate3d(calc(${values.cursorOutside.x}px - 50%), calc(${values.cursorOutside.y}px - 50%), 0) scale(1)`
         this.cursorOutside.classList.add('ll-cursor-grow')
-        this.cursorInside.style.transform = `translate3d(calc(${values.cursorInside.x}px - 50%), calc(${values.cursorInside.y}px - 50%), 0)`
+        this.cursorInside.style.transform = `translate3d(calc(${values.cursorInside.x}px - 50%), calc(${values.cursorInside.y}px - 50%), 0) scale(1)`
         this.cursorInside.style.opacity = 1
     }
 
@@ -59,11 +59,13 @@ export class Cursor {
     }
 
     shrinkCursor = () => {
-        this.cursorOutside.classList.add('ll-shrink-cursor')
+        this.cursorOutside.style.width = '.75em'
+        this.cursorOutside.style.transition = 'all .2s linear';
     }
 
     removeShrinkCursor = () => {
-        this.cursorOutside.classList.remove('ll-shrink-cursor')
+        this.cursorOutside.style.width = ''
+        this.cursorOutside.style.transition = '';
     }
 }
 
