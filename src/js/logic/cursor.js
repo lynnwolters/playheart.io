@@ -28,10 +28,10 @@ export class Cursor {
         let cursorShrinkSelector = document.querySelectorAll('.js-cursor-shrink-selector')
         cursorShrinkSelector.forEach(item => {
             item.addEventListener('mouseenter', () => {
-                this.shrinkCursor()
+                this.fadeCursor()
             })
             item.addEventListener('mouseleave', () => {
-                this.removeShrinkCursor()
+                this.removeFadeCursor()
             })
         })
     }
@@ -44,9 +44,9 @@ export class Cursor {
 
     snapTo = (values) => {
         this.update = false
-        this.cursorOutside.style.transform = `translate3d(calc(${values.cursorOutside.x}px - 50%), calc(${values.cursorOutside.y}px - 50%), 0) scale(1)`
+        this.cursorOutside.style.transform = `translate3d(calc(${values.cursorOutside.x}px - 50%), calc(${values.cursorOutside.y}px - 50%), 0)`
         this.cursorOutside.classList.add('ll-cursor-grow')
-        this.cursorInside.style.transform = `translate3d(calc(${values.cursorInside.x}px - 50%), calc(${values.cursorInside.y}px - 50%), 0) scale(1)`
+        this.cursorInside.style.transform = `translate3d(calc(${values.cursorInside.x}px - 50%), calc(${values.cursorInside.y}px - 50%), 0)`
         this.cursorInside.style.opacity = 1
     }
 
@@ -58,14 +58,12 @@ export class Cursor {
         }
     }
 
-    shrinkCursor = () => {
-        this.cursorOutside.style.width = '.75em'
-        this.cursorOutside.style.transition = 'all .2s linear';
+    fadeCursor = () => {
+        this.cursorOutside.classList.add('fade-cursor')
     }
 
-    removeShrinkCursor = () => {
-        this.cursorOutside.style.width = ''
-        this.cursorOutside.style.transition = '';
+    removeFadeCursor = () => {
+        this.cursorOutside.classList.remove('fade-cursor')
     }
 }
 
