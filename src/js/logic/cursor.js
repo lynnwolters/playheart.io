@@ -15,18 +15,18 @@ export class Cursor {
 
     bindEvents = () => {    
         document.addEventListener('mousemove', this.customCursor)
-        this.bindShrinkElements()
+        this.bindFadeElements()
     }
 
     handleRouteChange = () => {
         this.release()
-        this.bindShrinkElements()
+        this.bindFadeElements()
         this.cursorInside = document.querySelector('.js-cursor-inside')
     }
 
-    bindShrinkElements = () => {
-        let cursorShrinkSelector = document.querySelectorAll('.js-cursor-shrink-selector')
-        cursorShrinkSelector.forEach(item => {
+    bindFadeElements = () => {
+        let cursorFadeSelector = document.querySelectorAll('.js-cursor-fade-selector')
+        cursorFadeSelector.forEach(item => {
             item.addEventListener('mouseenter', () => {
                 this.fadeCursor()
             })
@@ -59,11 +59,11 @@ export class Cursor {
     }
 
     fadeCursor = () => {
-        this.cursorOutside.classList.add('fade-cursor')
+        this.cursorOutside.classList.add('ll-fade-cursor')
     }
 
     removeFadeCursor = () => {
-        this.cursorOutside.classList.remove('fade-cursor')
+        this.cursorOutside.classList.remove('ll-fade-cursor')
     }
 }
 
