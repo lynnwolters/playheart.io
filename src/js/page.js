@@ -24,10 +24,12 @@ export class Page {
             this.typeEffect = new TypeEffect(undefined, {
                 callback: () => {
                     app.cursor.update = true
+                    app.cursor.showCursorOutside()
                 }
             })
         } else {
             app.cursor.update = true
+            app.cursor.showCursorOutside()
         }
     }
 
@@ -39,11 +41,3 @@ export class Page {
         console.log('destroy page', this.title) 
     }
 }
-
-// hideCursor = () => {
-//     if (this.update = false) {
-//         this.cursorOutside.classList.add('ll-hide-cursor')
-//     } else {
-//         this.cursorOutside.classList.remove('ll-hide-cursor')
-//     }
-// }

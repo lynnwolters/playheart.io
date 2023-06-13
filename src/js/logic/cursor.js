@@ -11,11 +11,11 @@ export class Cursor {
 
     init = () => {
         this.bindEvents()
+        this.bindFadeElements()
     }
 
     bindEvents = () => {    
         document.addEventListener('mousemove', this.customCursor)
-        this.bindFadeElements()
     }
 
     handleRouteChange = () => {
@@ -64,6 +64,10 @@ export class Cursor {
 
     removeFadeCursor = () => {
         this.cursorOutside.classList.remove('ll-fade-cursor')
+    }
+
+    showCursorOutside = () => {
+        this.cursorOutside.style.opacity = '1'
     }
 }
 
