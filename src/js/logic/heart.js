@@ -20,16 +20,20 @@ export class Heart {
     bindEvents = () => {
         window.addEventListener('resize', this.reportWindowSize)
         this.heartRectangles.forEach(rectangle => {
+
+            // MOUSEENTER EVENT
             rectangle.addEventListener('mouseenter', () => {
                 this.heartCalculation(rectangle)
                 this.showMarquee(rectangle)
             })
 
+            // MOUSELEAVE EVENT
             rectangle.addEventListener('mouseleave', () => {
                 this.leaveHeartRect()
                 this.hideMarquee()
             })
 
+            // CLICK EVENT
             const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0
             if (isTouchDevice) {
                 console.log('On a touch device!')
@@ -76,10 +80,10 @@ export class Heart {
     }
 
     touchDeviceState = (rectangle, event) => {
-        event.stopImmediatePropagation()
-        event.preventDefault()
         let link = rectangle.closest('.js-rectangle-link').getAttribute('href')
         let continueButton = document.querySelector('.js-continue-button')
+        event.stopImmediatePropagation()
+        event.preventDefault()
         continueButton.setAttribute('href', link)
         console.log(link)
     }
