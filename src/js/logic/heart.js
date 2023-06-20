@@ -1,4 +1,4 @@
-import { app } from "../../main"
+import { app } from '../../main'
 
 export class Heart {
     constructor() {
@@ -29,6 +29,16 @@ export class Heart {
                 this.leaveHeartRect()
                 this.hideMarquee()
             })
+
+            const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0
+            if (isTouchDevice) {
+                console.log('On a touch device!')
+                rectangle.addEventListener('click', (event) => {
+                    this.touchDeviceState(rectangle, event)
+                })
+            } else {
+                console.log('Not on a touch device!')
+            }
         })
     }
 
@@ -63,5 +73,14 @@ export class Heart {
 
     hideMarquee = () => {
         app.page.marquee.hideMarquee()
+    }
+
+    touchDeviceState = (rectangle, event) => {
+        event.stopImmediatePropagation()
+        event.preventDefault()
+        let link = rectangle.closest('.js-rectangle-link').getAttribute('href')
+        let continueButton = document.querySelector('.js-continue-button')
+        continueButton.setAttribute('href', link)
+        console.log(link)
     }
 }
