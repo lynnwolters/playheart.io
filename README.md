@@ -1,4 +1,4 @@
-# Proto
+# Playheart.io
 
 ## Install
 
